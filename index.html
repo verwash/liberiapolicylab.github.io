@@ -4,96 +4,357 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Liberia Policy Lab — Coming Soon</title>
-  <meta name="description" content="Liberia Policy Lab is a youth‑led, boutique policy lab reimagining Liberia’s development through rigorous research, policy innovation, and civic engagement." />
-  <meta property="og:title" content="Liberia Policy Lab — Coming Soon" />
-  <meta property="og:description" content="Youth‑led think tank advancing data‑driven solutions across climate, economy, education, health, jobs, and governance." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0b3d2e" />
+  <meta name="description" content="Liberia Policy Lab is a youth‑led, boutique policy lab reimagining Liberia's development through rigorous research, policy innovation, and civic engagement." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b3d2e; /* deep green */
-      --fg:#e8fff6; /* mint tint */
-      --muted:#b9e3d3;
-      --accent:#ffd166; /* warm accent */
+      --green:#0f5d45;
+      --green-light:#16a270;
+      --gold:#d4a853;
+      --bg:#fafaf9;
+      --text:#1a1a1a;
+      --text-muted:#6b7280;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *{box-sizing:border-box;margin:0;padding:0}
     body{
-      margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-      background:radial-gradient(1200px 1200px at 85% -10%, #16634e 0%, var(--bg) 45%) fixed,var(--bg);
-      color:var(--fg);
-      display:flex; align-items:center; justify-content:center;
-      padding:48px 20px;
+      font-family:Inter,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
     }
-    .card{
-      width:min(860px, 100%);
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.12);
-      border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,0.35);
+    
+    /* Header */
+    header{
+      padding:2rem 5%;
+      border-bottom:1px solid #e5e5e5;
+    }
+    .site-title{
+      font-size:1.5rem;
+      font-weight:700;
+      color:var(--green);
+      margin-bottom:0.25rem;
+    }
+    .site-subtitle{
+      font-size:0.95rem;
+      color:var(--text-muted);
+    }
+    
+    /* Main content */
+    main{
+      flex:1;
+      max-width:800px;
+      margin:0 auto;
+      padding:4rem 5% 3rem;
+      width:100%;
+    }
+    
+    .badge{
+      display:inline-block;
+      padding:0.5rem 1rem;
+      background:var(--green);
+      color:white;
+      border-radius:6px;
+      font-size:0.85rem;
+      font-weight:600;
+      letter-spacing:0.5px;
+      margin-bottom:2rem;
+      position:relative;
       overflow:hidden;
     }
-    header{
-      padding:28px 28px 0; display:flex; align-items:center; gap:14px;
+    .badge::after{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+      animation:shimmer 3s infinite;
     }
-    .logo{display:grid; place-items:center; width:44px; height:44px; border-radius:10px; background:linear-gradient(135deg,#20c997,#118ab2); font-weight:800; color:#07261d}
-    .brand h1{margin:0; font-size:1.35rem; letter-spacing:.2px}
-    .brand p{margin:2px 0 0; color:var(--muted); font-size:.92rem}
-    main{padding:22px 28px 32px}
-    .soon{
-      display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; background:rgba(255,209,102,.15); color:#ffe29c; font-weight:600; letter-spacing:.3px; text-transform:uppercase; font-size:.78rem;
+    @keyframes shimmer{
+      to{left:100%}
     }
-    h2{font-size:2.25rem; line-height:1.2; margin:16px 0 8px}
-    .tagline{font-size:1.1rem; color:var(--muted); max-width:56ch}
-    .pillars{display:flex; flex-wrap:wrap; gap:10px; margin:22px 0 10px}
-    .pillars span{padding:8px 12px; border:1px solid rgba(255,255,255,0.18); border-radius:999px; font-size:.9rem; color:#d8fff2}
-    .cta{
-      margin-top:20px; display:flex; gap:12px; flex-wrap:wrap
+    
+    h1{
+      font-size:clamp(2rem,5vw,3rem);
+      font-weight:700;
+      line-height:1.2;
+      margin-bottom:1.5rem;
+      color:var(--text);
     }
-    a.btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; text-decoration:none; font-weight:600}
-    a.primary{background:var(--accent); color:#1e2a26}
-    a.ghost{border:1px solid rgba(255,255,255,0.2); color:var(--fg)}
-    footer{padding:0 28px 26px; color:#a9d7c9; font-size:.9rem}
-    footer a{color:#d0fff1}
+    
+    .intro{
+      font-size:1.15rem;
+      color:var(--text-muted);
+      margin-bottom:2rem;
+      max-width:700px;
+    }
+    
+    /* Interactive pillars */
+    .pillars{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:1rem;
+      margin:3rem 0;
+    }
+    .pillar-card{
+      padding:1.5rem;
+      border:2px solid #e5e5e5;
+      border-radius:12px;
+      background:white;
+      cursor:pointer;
+      transition:all 0.3s ease;
+    }
+    .pillar-card:hover{
+      border-color:var(--green);
+      transform:translateY(-4px);
+      box-shadow:0 8px 24px rgba(15,93,69,0.1);
+    }
+    .pillar-card.active{
+      border-color:var(--green);
+      background:linear-gradient(135deg,rgba(15,93,69,0.05),rgba(22,162,112,0.05));
+    }
+    .pillar-title{
+      font-weight:600;
+      color:var(--green);
+      margin-bottom:0.5rem;
+      font-size:1rem;
+    }
+    .pillar-desc{
+      font-size:0.9rem;
+      color:var(--text-muted);
+      display:none;
+    }
+    .pillar-card.active .pillar-desc{
+      display:block;
+      animation:fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(-10px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    
+    /* Focus areas with hover effect */
+    .focus-section{
+      margin:3rem 0;
+    }
+    .section-label{
+      font-size:0.85rem;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      color:var(--text-muted);
+      margin-bottom:1rem;
+      font-weight:600;
+    }
+    .focus-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.75rem;
+    }
+    .focus-tag{
+      padding:0.6rem 1.2rem;
+      border:1px solid #e5e5e5;
+      border-radius:999px;
+      font-size:0.9rem;
+      background:white;
+      color:var(--text);
+      cursor:pointer;
+      transition:all 0.2s ease;
+    }
+    .focus-tag:hover{
+      border-color:var(--green);
+      background:var(--green);
+      color:white;
+    }
+    
+    /* Contact form */
+    .contact-section{
+      margin:3rem 0;
+      padding:2rem;
+      background:white;
+      border:2px solid #e5e5e5;
+      border-radius:12px;
+    }
+    .form-group{
+      margin-bottom:1.5rem;
+    }
+    label{
+      display:block;
+      font-weight:600;
+      margin-bottom:0.5rem;
+      color:var(--text);
+      font-size:0.95rem;
+    }
+    input,textarea{
+      width:100%;
+      padding:0.75rem 1rem;
+      border:1px solid #e5e5e5;
+      border-radius:8px;
+      font-family:inherit;
+      font-size:1rem;
+      transition:border-color 0.2s ease;
+    }
+    input:focus,textarea:focus{
+      outline:none;
+      border-color:var(--green);
+    }
+    textarea{
+      resize:vertical;
+      min-height:100px;
+    }
+    .btn{
+      padding:0.875rem 2rem;
+      background:var(--green);
+      color:white;
+      border:none;
+      border-radius:8px;
+      font-weight:600;
+      font-size:1rem;
+      cursor:pointer;
+      transition:all 0.2s ease;
+    }
+    .btn:hover{
+      background:var(--green-light);
+      transform:translateY(-2px);
+    }
+    .btn:active{
+      transform:translateY(0);
+    }
+    
+    /* Success message */
+    .success-msg{
+      display:none;
+      padding:1rem;
+      background:#d1fae5;
+      color:#065f46;
+      border-radius:8px;
+      margin-top:1rem;
+      animation:fadeIn 0.3s ease;
+    }
+    .success-msg.show{
+      display:block;
+    }
+    
+    /* Footer */
+    footer{
+      padding:2rem 5%;
+      border-top:1px solid #e5e5e5;
+      text-align:center;
+      color:var(--text-muted);
+      font-size:0.9rem;
+    }
+    
+    @media (max-width:768px){
+      main{
+        padding:2rem 5%;
+      }
+      .pillars{
+        grid-template-columns:1fr;
+      }
+      h1{
+        font-size:1.75rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="card" role="region" aria-label="Liberia Policy Lab — Coming Soon">
-    <header>
-      <div class="logo" aria-hidden="true">LP</div>
-      <div class="brand">
-        <h1>Liberia Policy Lab</h1>
-        <p>Youth‑led policy innovation for Liberia’s future</p>
+  <header>
+    <div class="site-title">Liberia Policy Lab</div>
+    <div class="site-subtitle">Monrovia & Berlin</div>
+  </header>
+
+  <main>
+    <div class="badge">LAUNCHING 2025</div>
+    
+    <h1>Reimagining Liberia's development with ideas, evidence, and action.</h1>
+    
+    <p class="intro">
+      Liberia Policy Lab is a youth‑led, boutique policy lab and think tank that brings together young leaders, academics, policymakers, and citizens to co‑create data‑driven solutions across climate & environment, the economy, education, health & wellbeing, employment, governance, and public–private collaboration.
+    </p>
+    
+    <div class="pillars">
+      <div class="pillar-card" onclick="this.classList.toggle('active')">
+        <div class="pillar-title">Research & Analysis</div>
+        <div class="pillar-desc">Rigorous, evidence-based research to inform policy decisions and drive meaningful change.</div>
       </div>
-    </header>
-
-    <main>
-      <span class="soon">Coming soon</span>
-      <h2>Reimagining Liberia’s development with ideas, evidence, and action.</h2>
-      <p class="tagline">
-        Liberia Policy Lab is a youth‑led, boutique policy lab and think tank that brings together young leaders, academics, policymakers, and citizens to co‑create data‑driven solutions. We combine rigorous research, policy design, and civic engagement across climate & environment, the economy, education, health & wellbeing, employment, governance, and public–private collaboration.
-      </p>
-
-      <div class="pillars" aria-label="Focus areas">
-        <span>Research &amp; Analysis</span>
-        <span>Policy Innovation &amp; Design</span>
-        <span>Engagement &amp; Learning</span>
+      <div class="pillar-card" onclick="this.classList.toggle('active')">
+        <div class="pillar-title">Policy Innovation</div>
+        <div class="pillar-desc">Creative policy design that addresses Liberia's unique challenges with innovative solutions.</div>
       </div>
-
-      <div class="cta">
-        <a class="btn primary" href="mailto:info@liberiapolicylab.org">Contact: info@liberiapolicylab.org</a>
-        <a class="btn ghost" href="#" aria-disabled="true" onclick="return false;">Newsletter (soon)</a>
+      <div class="pillar-card" onclick="this.classList.toggle('active')">
+        <div class="pillar-title">Civic Engagement</div>
+        <div class="pillar-desc">Building bridges between citizens, leaders, and institutions for collaborative governance.</div>
       </div>
-    </main>
+    </div>
+    
+    <div class="focus-section">
+      <div class="section-label">Focus Areas</div>
+      <div class="focus-grid">
+        <span class="focus-tag">Climate & Environment</span>
+        <span class="focus-tag">Economic Development</span>
+        <span class="focus-tag">Education</span>
+        <span class="focus-tag">Health & Wellbeing</span>
+        <span class="focus-tag">Employment</span>
+        <span class="focus-tag">Governance</span>
+        <span class="focus-tag">Public-Private Partnerships</span>
+      </div>
+    </div>
+    
+    <div class="contact-section">
+      <h2 style="margin-bottom:1rem;font-size:1.5rem">Get Early Updates</h2>
+      <p style="color:var(--text-muted);margin-bottom:1.5rem">Be the first to know when we launch and stay informed about our work.</p>
+      
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message (optional)</label>
+          <textarea id="message"></textarea>
+        </div>
+        <button type="submit" class="btn">Join Our Community</button>
+        <div class="success-msg" id="successMsg">
+          Thank you! We'll be in touch soon. For immediate inquiries, email us at info@liberiapolicylab.org
+        </div>
+      </form>
+    </div>
+  </main>
 
-    <footer>
-      © <span id="year"></span> Liberia Policy Lab · Monrovia & Berlin · All rights reserved
-    </footer>
-  </div>
+  <footer>
+    <p>© <span id="year"></span> Liberia Policy Lab · All rights reserved · <a href="mailto:info@liberiapolicylab.org" style="color:var(--green)">info@liberiapolicylab.org</a></p>
+  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('successMsg').classList.add('show');
+      setTimeout(() => {
+        this.reset();
+      }, 500);
+    });
+    
+    // Interactive focus tags
+    const focusTags = document.querySelectorAll('.focus-tag');
+    focusTags.forEach(tag => {
+      tag.addEventListener('click', function(){
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1)';
+        }, 100);
+      });
+    });
   </script>
 </body>
 </html>
