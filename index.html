@@ -17,7 +17,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.liberiapolicylab.org/">
 <meta property="og:title" content="Liberia Policy Lab – Youth-led Policy Innovation & Research Lab for Liberia">
-<meta property="og:description" content="A youth-led think tank driving data-driven solutions to shape Liberia’s future.">
+<meta property="og:description" content="A youth-led think tank driving data-driven solutions to shape Liberia's future.">
 <meta property="og:image" content="https://www.liberiapolicylab.org/og-image.png"><!-- 1200x630 -->
 
 <!-- Twitter Card -->
@@ -38,7 +38,7 @@
   "name": "Liberia Policy Lab",
   "url": "https://www.liberiapolicylab.org/",
   "logo": "https://www.liberiapolicylab.org/favicon.png",
-  "description": "Liberia Policy Lab is a youth-led policy lab using research, innovation, and civic engagement to shape Liberia’s sustainable development.",
+  "description": "Liberia Policy Lab is a youth-led policy lab using research, innovation, and civic engagement to shape Liberia's sustainable development.",
   "foundingDate": "2025",
   "address": { "@type": "PostalAddress", "addressCountry": "LR" },
   "sameAs": [
@@ -48,7 +48,8 @@
 }
 </script>
 
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --green:#0f5d45;
@@ -75,23 +76,21 @@
 
     /* Header */
     header{
-      padding:2rem 5%; border-bottom:1px solid #e5e5e5;
+      padding:1.5rem 5%; border-bottom:1px solid #e5e5e5;
       background:rgba(255,255,255,0.8); backdrop-filter:blur(10px);
       box-shadow:0 1px 3px rgba(0,0,0,0.05); position:relative; z-index:1000;
     }
-    .header-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem; flex-direction:column; width:100%;}
-    .header-left{width:100%;}
+    .header-top{display:flex; justify-content:space-between; align-items:center;}
     .site-title{
-      font-size:1.5rem; font-weight:700; color:var(--green); margin-bottom:0.5rem;
+      font-size:1.5rem; font-weight:700; color:var(--green);
       background:linear-gradient(135deg, var(--green), var(--green-light));
       -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
-    .site-subtitle{font-size:0.95rem; color:var(--text-muted); line-height:1.5; width:100%;}
     nav{position:relative; display:flex; justify-content:flex-end;}
     .nav-toggle{
       display:flex; align-items:center; gap:0.5rem; padding:0.75rem 1.25rem; background:white;
       border:2px solid #e5e5e5; border-radius:8px; cursor:pointer; font-weight:500; color:var(--text);
-      transition:all 0.3s ease; margin-top:1rem;
+      transition:all 0.3s ease;
     }
     .nav-toggle:hover{border-color:var(--green); background:rgba(15,93,69,0.05);}
     .hamburger{display:flex; flex-direction:column; gap:3px; width:20px;}
@@ -137,10 +136,10 @@
       font-size:clamp(2rem,5vw,3rem); font-weight:700; line-height:1.2; margin-bottom:1.5rem; color:var(--text);
       background:linear-gradient(135deg, #1a1a1a 0%, #0f5d45 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
-    .intro{font-size:1.15rem; color:var(--text-muted); margin-bottom:2rem;}
+    .intro{font-size:1.15rem; color:var(--text-muted); margin-bottom:2rem; opacity:0; animation:fadeInUp 0.6s ease-out 0.2s forwards;}
 
     /* Pillars */
-    .pillars{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin:3rem 0;}
+    .pillars{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin:3rem 0; opacity:0; animation:fadeInUp 0.6s ease-out 0.4s forwards;}
     .pillar-card{
       padding:1.5rem; border:2px solid #e5e5e5; border-radius:12px; background:white; cursor:pointer; transition:all 0.3s ease;
       box-shadow:0 2px 8px rgba(0,0,0,0.05);
@@ -151,9 +150,10 @@
     .pillar-desc{font-size:0.9rem; color:var(--text-muted); display:none;}
     .pillar-card.active .pillar-desc{display:block; animation:fadeIn 0.3s ease;}
     @keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 
     /* Focus areas */
-    .focus-section{margin:3rem 0; padding:3rem 0;}
+    .focus-section{margin:3rem 0; padding:3rem 0; opacity:0; animation:fadeInUp 0.6s ease-out 0.6s forwards;}
     .section-label{
       font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; color:var(--text-muted); margin-bottom:2rem;
       font-weight:600; text-align:center; position:relative; padding-bottom:1rem;
@@ -195,6 +195,7 @@
     .contact-section{
       margin:3rem 0; padding:2.5rem; background:linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
       border:2px solid #e5e5e5; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08); backdrop-filter:blur(10px);
+      opacity:0; animation:fadeInUp 0.6s ease-out 0.8s forwards;
     }
     .form-group{margin-bottom:1.5rem;}
     label{display:block; font-weight:600; margin-bottom:0.5rem; color:var(--text); font-size:0.95rem;}
@@ -204,8 +205,18 @@
     }
     input:focus,textarea:focus{outline:none; border-color:var(--green); box-shadow:0 0 0 3px rgba(15,93,69,0.1);}
     textarea{resize:vertical; min-height:100px;}
-    .btn{padding:0.875rem 2rem; background:var(--green); color:white; border:none; border-radius:8px; font-weight:600; font-size:1rem; cursor:pointer; transition:all 0.2s ease;}
-    .btn:hover{background:var(--green-light); transform:translateY(-2px);}
+    .btn{
+      padding:1rem 2rem; border-radius:12px; font-weight:600; font-size:1rem; text-decoration:none; display:inline-flex;
+      align-items:center; gap:0.75rem; transition:all 0.3s ease; position:relative; overflow:hidden;
+      background:linear-gradient(135deg, var(--green), var(--green-light)); color:white; border:none; cursor:pointer;
+      box-shadow:0 4px 15px rgba(15,93,69,0.3);
+    }
+    .btn::before{
+      content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition:left 0.5s ease;
+    }
+    .btn:hover::before{left:100%;}
+    .btn:hover{transform:translateY(-2px); box-shadow:0 6px 20px rgba(15,93,69,0.4);}
     .btn:active{transform:translateY(0);}
     .success-msg{
       display:none; padding:1rem; background:linear-gradient(135deg, #d1fae5, #a7f3d0); color:#065f46; border-radius:8px; margin-top:1rem;
@@ -214,7 +225,44 @@
     .success-msg.show{display:block;}
 
     /* Footer */
-    footer{padding:2rem 5%; border-top:1px solid #e5e5e5; text-align:center; color:var(--text-muted); font-size:0.9rem;}
+    footer{
+      padding:2rem 5%; text-align:center; color:var(--text-muted); font-size:0.9rem;
+      background:rgba(255,255,255,0.8); backdrop-filter:blur(10px); border-top:1px solid #e5e5e5;
+      box-shadow:0 -1px 3px rgba(0,0,0,0.05);
+    }
+    .footnote{
+      font-size:0.95rem;
+      color:white;
+      font-weight:500;
+      margin-bottom:1.5rem;
+      padding:1.25rem 2rem;
+      background:linear-gradient(135deg, var(--green), var(--green-light));
+      border-radius:12px;
+      max-width:800px;
+      margin-left:auto;
+      margin-right:auto;
+      box-shadow:0 4px 15px rgba(15,93,69,0.3);
+      position:relative;
+      overflow:hidden;
+    }
+    .footnote::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation:shimmer 3s infinite;
+    }
+    footer a{
+      color:var(--green); text-decoration:none; transition:all 0.2s ease; position:relative;
+    }
+    footer a::after{
+      content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px;
+      background:var(--green); transition:width 0.3s ease;
+    }
+    footer a:hover::after{width:100%;}
 
     @media (max-width:768px){
       main{padding:1.5rem 5%;}
@@ -226,8 +274,10 @@
       .focus-tag.active{padding:0.6rem 1.2rem 2.5rem;}
       .focus-desc{font-size:0.8rem; max-width:100%;}
       .focus-tag:nth-child(n){transform:rotate(0deg);}
-      .site-subtitle{font-size:0.85rem;}
-      .nav-toggle{margin-top:0.5rem;}
+      .footnote{font-size:0.85rem; padding:1rem 1.5rem;}
+      header{padding:1rem 5%;}
+      .site-title{font-size:1.25rem;}
+      .nav-toggle{padding:0.5rem 1rem; font-size:0.9rem;}
     }
     @media (min-width:769px) and (max-width:1024px){ main{padding:2rem 6%;} }
     @media (min-width:1400px){ main{max-width:1400px; padding:2.5rem 10%;} }
@@ -236,23 +286,20 @@
 <body>
   <header>
     <div class="header-top">
-      <div class="header-left">
-        <div class="site-title">Liberia Policy Lab</div>
-        <div class="site-subtitle">We transform groundbreaking research findings into tools for reforms and use data to shape decisions and policy outcomes.</div>
-      </div>
+      <div class="site-title">Liberia Policy Lab</div>
+      <nav>
+        <div class="nav-toggle" onclick="this.classList.toggle('active'); document.getElementById('navMenu').classList.toggle('active')">
+          <div class="hamburger"><span></span><span></span><span></span></div>
+          <span>Menu</span>
+        </div>
+        <div class="nav-menu" id="navMenu">
+          <a href="#who-we-are" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">Who We Are</a>
+          <a href="#what-we-do" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">What We Do</a>
+          <a href="#focus-areas" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">Our Focus Areas</a>
+          <a href="#contact" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">Contact</a>
+        </div>
+      </nav>
     </div>
-    <nav>
-      <div class="nav-toggle" onclick="this.classList.toggle('active'); document.getElementById('navMenu').classList.toggle('active')">
-        <div class="hamburger"><span></span><span></span><span></span></div>
-        <span>Menu</span>
-      </div>
-      <div class="nav-menu" id="navMenu">
-        <a href="#who-we-are" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">Who We Are</a>
-        <a href="#what-we-do" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">What We Do</a>
-        <a href="#focus-areas" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">Our Focus Areas</a>
-        <a href="#contact" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">Contact</a>
-      </div>
-    </nav>
   </header>
 
   <main>
@@ -367,20 +414,21 @@
         </div>
       </form>
 
-      <!-- Hidden iframe to prevent redirect -->
       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </div>
   </main>
 
   <footer>
+    <div class="footnote">
+      We transform groundbreaking research findings into tools for reforms and use data to shape decisions and policy outcomes.
+    </div>
     <p>© <span id="year"></span> Liberia Policy Lab · All rights reserved</p>
-    <p style="margin-top:0.5rem"><strong>Contact Us:</strong> <a href="mailto:info@liberiapolicylab.org" style="color:var(--green)">info@liberiapolicylab.org</a></p>
+    <p style="margin-top:0.5rem"><strong>Contact Us:</strong> <a href="mailto:info@liberiapolicylab.org">info@liberiapolicylab.org</a></p>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Close dropdown when clicking outside
     document.addEventListener('click', function(e){
       const navMenu = document.getElementById('navMenu');
       const navToggle = document.querySelector('.nav-toggle');
@@ -390,7 +438,6 @@
       }
     });
 
-    // Form submission UI feedback for Google Forms
     document.getElementById('contactForm').addEventListener('submit', function(){
       document.getElementById('successMsg').classList.add('show');
       setTimeout(() => {
