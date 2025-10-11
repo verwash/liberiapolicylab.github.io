@@ -447,61 +447,90 @@
     });
   </script>
 
-  <!-- Added: Pretty-URL routing (no changes to existing code above) -->
-  <script>
-    (function () {
-      // Map pretty paths to section IDs
-      const routes = {
-        "/who-we-are": "who-we-are",
-        "/what-we-do": "what-we-do",
-        "/focus-areas": "focus-areas",
-        "/contact": "contact"
-      };
+  <!-- Pretty-URL routing: convert #hash to /pretty, handle clicks, back/forward -->
+<script>
+  (function () {
+    // Map pretty paths to section IDs
+    const routes = {
+      "/who-we-are": "who-we-are",
+      "/what-we-do": "what-we-do",
+      "/focus-areas": "focus-areas",
+      "/contact": "contact"
+    };
 
-      const idToPath = {
-        "who-we-are": "/who-we-are",
-        "what-we-do": "/what-we-do",
-        "focus-areas": "/focus-areas",
-        "contact": "/contact"
-      };
+    const idToPath = {
+      "who-we-are": "/who-we-are",
+      "what-we-do": "/what-we-do",
+      "focus-areas": "/focus-areas",
+      "contact": "/contact"
+    };
 
-      function scrollToId(id) {
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function normalizePathname(p) {
+      // remove trailing slash except for root
+      return p.length > 1 ? p.replace(/\/+$/, "") : p;
+    }
+
+    // A) On load:
+    // 1) If we landed on a pretty path (/contact), just scroll to that section
+    // 2) If we landed with a hash (/#contact), convert it to pretty path and scroll
+    document.addEventListener("DOMContentLoaded", function () {
+      const path = normalizePathname(location.pathname);
+      const hash = location.hash ? location.hash.slice(1) : "";
+
+      // Case 1: Pretty path already (no hash)
+      if (routes[path]) {
+        scrollToId(routes[path]);
+        return;
       }
 
-      // 1) On load: if user lands on /contact etc., scroll to the right section (keep pretty URL)
-      document.addEventListener("DOMContentLoaded", function () {
-        const path = location.pathname.replace(/\/+$/, ""); // trim trailing slashes
-        if (routes[path]) {
-          scrollToId(routes[path]);
-        }
-      });
+      // Case 2: Hash present -> convert to pretty path (no page reload)
+      if (hash && idToPath[hash]) {
+        const pretty = idToPath[hash];
+        history.replaceState({ pretty }, "", pretty + location.search);
+        scrollToId(hash);
+        return;
+      }
 
-      // 2) Intercept clicks on in-page hash links and switch to pretty path
-      document.addEventListener("click", function (e) {
-        const a = e.target.closest("a[href^='#']");
-        if (!a) return;
+      // Otherwise: plain homepage; do nothing.
+    });
 
-        const hash = a.getAttribute("href").replace("#", "");
-        if (idToPath[hash]) {
-          e.preventDefault();
-          const pretty = idToPath[hash];
-          history.pushState({ pretty }, "", pretty);
-          scrollToId(hash);
-        }
-      });
+    // B) Convert any future hash changes into pretty paths immediately
+    window.addEventListener("hashchange", function () {
+      const hash = location.hash ? location.hash.slice(1) : "";
+      if (hash && idToPath[hash]) {
+        const pretty = idToPath[hash];
+        history.replaceState({ pretty }, "", pretty + location.search);
+        scrollToId(hash);
+      }
+    });
 
-      // 3) Handle back/forward buttons
-      window.addEventListener("popstate", function () {
-        const path = location.pathname.replace(/\/+$/, "");
-        if (routes[path]) {
-          scrollToId(routes[path]);
-        }
-      });
-    })();
-  </script>
+    // C) Intercept clicks on in-page hash links and swap to pretty path
+    document.addEventListener("click", function (e) {
+      const a = e.target.closest("a[href^='#']");
+      if (!a) return;
+
+      const hash = a.getAttribute("href").replace("#", "");
+      if (idToPath[hash]) {
+        e.preventDefault();
+        const pretty = idToPath[hash];
+        history.pushState({ pretty }, "", pretty);
+        scrollToId(hash);
+      }
+    });
+
+    // D) Handle browser back/forward on pretty paths
+    window.addEventListener("popstate", function () {
+      const path = normalizePathname(location.pathname);
+      if (routes[path]) {
+        scrollToId(routes[path]);
+      }
+    });
+  })();
+</script>
 </body>
 </html>
