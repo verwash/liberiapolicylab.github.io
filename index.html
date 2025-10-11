@@ -195,20 +195,20 @@
 
     /* Contact form */
     .contact-section{
-      margin:3rem 0; padding:2.5rem; background:linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+      margin:2rem 0; padding:1.5rem; background:linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
       border:2px solid #e5e5e5; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08); backdrop-filter:blur(10px);
       opacity:0; animation:fadeInUp 0.6s ease-out 0.8s forwards;
     }
-    .form-group{margin-bottom:1.5rem;}
-    label{display:block; font-weight:600; margin-bottom:0.5rem; color:var(--text); font-size:0.95rem;}
+    .form-group{margin-bottom:1rem;}
+    label{display:block; font-weight:600; margin-bottom:0.35rem; color:var(--text); font-size:0.9rem;}
     input,textarea{
-      width:100%; padding:0.75rem 1rem; border:1px solid #e5e5e5; border-radius:8px; font-family:inherit; font-size:1rem;
+      width:100%; padding:0.5rem 0.75rem; border:1px solid #e5e5e5; border-radius:8px; font-family:inherit; font-size:0.95rem;
       transition:all 0.2s ease; background:white;
     }
     input:focus,textarea:focus{outline:none; border-color:var(--green); box-shadow:0 0 0 3px rgba(15,93,69,0.1);}
-    textarea{resize:vertical; min-height:100px;}
+    textarea{resize:vertical; min-height:70px;}
     .btn{
-      padding:1rem 2rem; border-radius:12px; font-weight:600; font-size:1rem; text-decoration:none; display:inline-flex;
+      padding:0.75rem 1.5rem; border-radius:12px; font-weight:600; font-size:0.95rem; text-decoration:none; display:inline-flex;
       align-items:center; gap:0.75rem; transition:all 0.3s ease; position:relative; overflow:hidden;
       background:linear-gradient(135deg, var(--green), var(--green-light)); color:white; border:none; cursor:pointer;
       box-shadow:0 4px 15px rgba(15,93,69,0.3);
@@ -270,7 +270,7 @@
       main{padding:1.5rem 5%;}
       .pillars{grid-template-columns:1fr;}
       h1{font-size:1.75rem;}
-      .contact-section{padding:1.5rem;}
+      .contact-section{padding:1rem;}
       .focus-grid{gap:1rem; min-height:auto;}
       .focus-tag{font-size:0.85rem; padding:0.6rem 1.2rem;}
       .focus-tag.active{padding:0.6rem 1.2rem 2.5rem;}
@@ -409,8 +409,8 @@
     </div>
 
     <div class="contact-section" id="contact">
-      <h2 style="margin-bottom:1rem;font-size:1.5rem">Get Early Updates</h2>
-      <p style="color:var(--text-muted);margin-bottom:1.5rem">Be the first to know when we launch and stay informed about our work.</p>
+      <h2 style="margin-bottom:0.5rem;font-size:1.2rem">Get Early Updates</h2>
+      <p style="color:var(--text-muted);margin-bottom:1rem;font-size:0.95rem">Be the first to know when we launch and stay informed about our work.</p>
 
       <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfht-kOH39PV2oWsz6RHSsEmCybf_WHhmPwg9pc-YvtGQMS4Q/formResponse" method="POST" target="hidden_iframe">
         <div class="form-group">
