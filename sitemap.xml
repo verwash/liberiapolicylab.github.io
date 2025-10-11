@@ -7,22 +7,26 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.liberiapolicylab.org/#who-we-are</loc>
+    <loc>https://www.liberiapolicylab.org/who-we-are</loc>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.liberiapolicylab.org/#what-we-do</loc>
+    <loc>https://www.liberiapolicylab.org/what-we-do</loc>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.liberiapolicylab.org/#focus-areas</loc>
+    <loc>https://www.liberiapolicylab.org/focus-areas</loc>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.liberiapolicylab.org/#contact</loc>
+    <loc>https://www.liberiapolicylab.org/contact</loc>
+    <lastmod>2025-10-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
