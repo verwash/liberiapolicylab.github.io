@@ -3,10 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Liberia Policy Lab — Coming Soon</title>
-  <meta name="description" content="Liberia Policy Lab is a youth‑led, boutique policy lab reimagining Liberia's development through rigorous research, policy innovation, and civic engagement." />
+
+  <!-- Primary SEO Meta Tags -->
+  <title>Liberia Policy Lab – Youth-led Policy Innovation & Research for Liberia</title>
+  <meta name="title" content="Liberia Policy Lab – Youth-led Policy Innovation & Research for Liberia">
+  <meta name="description" content="Liberia Policy Lab is a youth-led think tank reimagining Liberia's development through data, evidence, and action. We transform groundbreaking research into policy tools that drive sustainable reforms.">
+
+  <!-- Keywords (optional) -->
+  <meta name="keywords" content="Liberia Policy Lab, policy research Liberia, youth think tank, evidence-based policy, sustainable development, Liberia governance, civic innovation, Liberian research, climate policy, economic growth, education reform">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.liberiapolicylab.org/" />
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.liberiapolicylab.org/" />
+  <meta property="og:title" content="Liberia Policy Lab – Youth-led Policy Innovation & Research for Liberia" />
+  <meta property="og:description" content="A youth-led think tank driving data-driven solutions across climate, economy, education, and governance to shape Liberia’s future." />
+  <!-- Replace with your actual image path (1200×630 recommended) -->
+  <meta property="og:image" content="https://www.liberiapolicylab.org/og-image.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.liberiapolicylab.org/" />
+  <meta name="twitter:title" content="Liberia Policy Lab – Youth-led Policy Innovation & Research for Liberia" />
+  <meta name="twitter:description" content="Liberia Policy Lab is a youth-led think tank reimagining Liberia's development through data, evidence, and action." />
+  <!-- Replace with your actual image path -->
+  <meta name="twitter:image" content="https://www.liberiapolicylab.org/og-image.png" />
+
+  <!-- Favicon (replace with your own when ready) -->
+  <link rel="icon" type="image/png" href="https://www.liberiapolicylab.org/favicon.png" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Liberia Policy Lab",
+    "url": "https://www.liberiapolicylab.org/",
+    "logo": "https://www.liberiapolicylab.org/favicon.png",
+    "description": "Liberia Policy Lab is a youth-led policy lab using research, innovation, and civic engagement to shape Liberia’s sustainable development.",
+    "foundingDate": "2025",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "LR"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/liberiapolicylab",
+      "https://x.com/liberiapolicylab"
+    ]
+  }
+  </script>
+
   <style>
     :root{
       --green:#0f5d45;
@@ -17,554 +73,178 @@
       --text-muted:#6b7280;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    html{
-      scroll-behavior:smooth;
-      scroll-padding-top:80px;
-    }
+    html{scroll-behavior:smooth;scroll-padding-top:80px;}
     body{
       font-family:Inter,sans-serif;
       background:linear-gradient(135deg, #fafaf9 0%, #f5f5f4 100%);
       color:var(--text);
-      line-height:1.6;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      position:relative;
+      line-height:1.6; min-height:100vh; display:flex; flex-direction:column; position:relative;
     }
     body::before{
-      content:'';
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
+      content:''; position:fixed; top:0; left:0; width:100%; height:100%;
       background-image:radial-gradient(circle at 20px 20px, rgba(15,93,69,0.03) 1px, transparent 1px);
-      background-size:40px 40px;
-      pointer-events:none;
-      z-index:0;
+      background-size:40px 40px; pointer-events:none; z-index:0;
     }
-    body > *{
-      position:relative;
-      z-index:1;
-    }
-    
+    body > *{position:relative; z-index:1;}
+
     /* Header */
     header{
-      padding:2rem 5%;
-      border-bottom:1px solid #e5e5e5;
-      background:rgba(255,255,255,0.8);
-      backdrop-filter:blur(10px);
-      box-shadow:0 1px 3px rgba(0,0,0,0.05);
-      position:relative;
-      z-index:1000;
+      padding:2rem 5%; border-bottom:1px solid #e5e5e5;
+      background:rgba(255,255,255,0.8); backdrop-filter:blur(10px);
+      box-shadow:0 1px 3px rgba(0,0,0,0.05); position:relative; z-index:1000;
     }
-    .header-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      margin-bottom:1rem;
-      flex-direction:column;
-      width:100%;
-    }
-    .header-left{
-      width:100%;
-    }
+    .header-top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem; flex-direction:column; width:100%;}
+    .header-left{width:100%;}
     .site-title{
-      font-size:1.5rem;
-      font-weight:700;
-      color:var(--green);
-      margin-bottom:0.5rem;
+      font-size:1.5rem; font-weight:700; color:var(--green); margin-bottom:0.5rem;
       background:linear-gradient(135deg, var(--green), var(--green-light));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
-    .site-subtitle{
-      font-size:0.95rem;
-      color:var(--text-muted);
-      line-height:1.5;
-      width:100%;
-    }
-    nav{
-      position:relative;
-      display:flex;
-      justify-content:flex-end;
-    }
+    .site-subtitle{font-size:0.95rem; color:var(--text-muted); line-height:1.5; width:100%;}
+    nav{position:relative; display:flex; justify-content:flex-end;}
     .nav-toggle{
-      display:flex;
-      align-items:center;
-      gap:0.5rem;
-      padding:0.75rem 1.25rem;
-      background:white;
-      border:2px solid #e5e5e5;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:500;
-      color:var(--text);
-      transition:all 0.3s ease;
-      margin-top:1rem;
+      display:flex; align-items:center; gap:0.5rem; padding:0.75rem 1.25rem; background:white;
+      border:2px solid #e5e5e5; border-radius:8px; cursor:pointer; font-weight:500; color:var(--text);
+      transition:all 0.3s ease; margin-top:1rem;
     }
-    .nav-toggle:hover{
-      border-color:var(--green);
-      background:rgba(15,93,69,0.05);
-    }
-    .hamburger{
-      display:flex;
-      flex-direction:column;
-      gap:3px;
-      width:20px;
-    }
-    .hamburger span{
-      width:100%;
-      height:2px;
-      background:var(--green);
-      border-radius:2px;
-      transition:all 0.3s ease;
-    }
-    .nav-toggle.active .hamburger span:nth-child(1){
-      transform:rotate(45deg) translateY(7px);
-    }
-    .nav-toggle.active .hamburger span:nth-child(2){
-      opacity:0;
-    }
-    .nav-toggle.active .hamburger span:nth-child(3){
-      transform:rotate(-45deg) translateY(-7px);
-    }
+    .nav-toggle:hover{border-color:var(--green); background:rgba(15,93,69,0.05);}
+    .hamburger{display:flex; flex-direction:column; gap:3px; width:20px;}
+    .hamburger span{width:100%; height:2px; background:var(--green); border-radius:2px; transition:all 0.3s ease;}
+    .nav-toggle.active .hamburger span:nth-child(1){transform:rotate(45deg) translateY(7px);}
+    .nav-toggle.active .hamburger span:nth-child(2){opacity:0;}
+    .nav-toggle.active .hamburger span:nth-child(3){transform:rotate(-45deg) translateY(-7px);}
     .nav-menu{
-      display:none;
-      position:absolute;
-      top:100%;
-      right:0;
-      margin-top:0.5rem;
-      background:white;
-      border:2px solid #e5e5e5;
-      border-radius:12px;
-      box-shadow:0 8px 24px rgba(0,0,0,0.15);
-      min-width:200px;
-      overflow:hidden;
-      z-index:1001;
+      display:none; position:absolute; top:100%; right:0; margin-top:0.5rem; background:white;
+      border:2px solid #e5e5e5; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.15);
+      min-width:200px; overflow:hidden; z-index:1001;
     }
-    .nav-menu.active{
-      display:block;
-      animation:slideDown 0.3s ease;
-    }
-    @keyframes slideDown{
-      from{opacity:0;transform:translateY(-10px)}
-      to{opacity:1;transform:translateY(0)}
-    }
+    .nav-menu.active{display:block; animation:slideDown 0.3s ease;}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
     .nav-menu a{
-      display:block;
-      padding:1rem 1.5rem;
-      color:var(--text);
-      text-decoration:none;
-      font-weight:500;
-      transition:all 0.2s ease;
-      border-bottom:1px solid #f0f0f0;
+      display:block; padding:1rem 1.5rem; color:var(--text); text-decoration:none; font-weight:500;
+      transition:all 0.2s ease; border-bottom:1px solid #f0f0f0;
     }
-    .nav-menu a:last-child{
-      border-bottom:none;
-    }
-    .nav-menu a:hover{
-      background:rgba(15,93,69,0.05);
-      color:var(--green);
-      padding-left:2rem;
-    }
-    
-    /* Main content */
-    main{
-      flex:1;
-      max-width:1200px;
-      margin:0 auto;
-      padding:2rem 8% 3rem;
-      width:100%;
-    }
+    .nav-menu a:last-child{border-bottom:none;}
+    .nav-menu a:hover{background:rgba(15,93,69,0.05); color:var(--green); padding-left:2rem;}
+
+    /* Main */
+    main{flex:1; max-width:1200px; margin:0 auto; padding:2rem 8% 3rem; width:100%;}
     main::before{
-      content:'';
-      position:absolute;
-      top:0;
-      left:50%;
-      transform:translateX(-50%);
-      width:60px;
-      height:4px;
-      background:linear-gradient(90deg, var(--green), var(--green-light));
-      border-radius:2px;
+      content:''; position:absolute; top:0; left:50%; transform:translateX(-50%);
+      width:60px; height:4px; background:linear-gradient(90deg, var(--green), var(--green-light)); border-radius:2px;
     }
-    
+
     .badge{
-      display:inline-block;
-      padding:0.5rem 1rem;
-      background:linear-gradient(135deg, var(--green), var(--green-light));
-      color:white;
-      border-radius:6px;
-      font-size:0.85rem;
-      font-weight:600;
-      letter-spacing:0.5px;
-      margin-bottom:2rem;
-      position:relative;
-      overflow:hidden;
-      box-shadow:0 4px 15px rgba(15,93,69,0.3);
-      animation:pulse-glow 2s ease-in-out infinite;
-      cursor:pointer;
-      text-decoration:none;
-      transition:transform 0.2s ease;
+      display:inline-block; padding:0.5rem 1rem; background:linear-gradient(135deg, var(--green), var(--green-light));
+      color:white; border-radius:6px; font-size:0.85rem; font-weight:600; letter-spacing:0.5px; margin-bottom:2rem;
+      position:relative; overflow:hidden; box-shadow:0 4px 15px rgba(15,93,69,0.3); animation:pulse-glow 2s ease-in-out infinite;
+      cursor:pointer; text-decoration:none; transition:transform 0.2s ease;
     }
-    .badge:hover{
-      transform:translateY(-2px);
-      box-shadow:0 6px 20px rgba(15,93,69,0.4);
-    }
-    .badge:active{
-      transform:translateY(0);
-    }
-    @keyframes pulse-glow{
-      0%, 100%{box-shadow:0 4px 15px rgba(15,93,69,0.3)}
-      50%{box-shadow:0 4px 25px rgba(15,93,69,0.5)}
-    }
-    .badge::after{
-      content:'';
-      position:absolute;
-      top:0;
-      left:-100%;
-      width:100%;
-      height:100%;
-      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
-      animation:shimmer 3s infinite;
-    }
-    @keyframes shimmer{
-      to{left:100%}
-    }
-    
+    .badge:hover{transform:translateY(-2px); box-shadow:0 6px 20px rgba(15,93,69,0.4);}
+    .badge:active{transform:translateY(0);}
+    @keyframes pulse-glow{0%,100%{box-shadow:0 4px 15px rgba(15,93,69,0.3)}50%{box-shadow:0 4px 25px rgba(15,93,69,0.5)}}
+    .badge::after{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent); animation:shimmer 3s infinite;}
+    @keyframes shimmer{to{left:100%}}
+
     h1{
-      font-size:clamp(2rem,5vw,3rem);
-      font-weight:700;
-      line-height:1.2;
-      margin-bottom:1.5rem;
-      color:var(--text);
-      background:linear-gradient(135deg, #1a1a1a 0%, #0f5d45 100%);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
+      font-size:clamp(2rem,5vw,3rem); font-weight:700; line-height:1.2; margin-bottom:1.5rem; color:var(--text);
+      background:linear-gradient(135deg, #1a1a1a 0%, #0f5d45 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
     }
-    
-    .intro{
-      font-size:1.15rem;
-      color:var(--text-muted);
-      margin-bottom:2rem;
-    }
-    
-    /* Interactive pillars */
-    .pillars{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:1rem;
-      margin:3rem 0;
-    }
+    .intro{font-size:1.15rem; color:var(--text-muted); margin-bottom:2rem;}
+
+    /* Pillars */
+    .pillars{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin:3rem 0;}
     .pillar-card{
-      padding:1.5rem;
-      border:2px solid #e5e5e5;
-      border-radius:12px;
-      background:white;
-      cursor:pointer;
-      transition:all 0.3s ease;
+      padding:1.5rem; border:2px solid #e5e5e5; border-radius:12px; background:white; cursor:pointer; transition:all 0.3s ease;
       box-shadow:0 2px 8px rgba(0,0,0,0.05);
     }
-    .pillar-card:hover{
-      border-color:var(--green);
-      transform:translateY(-4px);
-      box-shadow:0 12px 24px rgba(15,93,69,0.15);
-    }
-    .pillar-card.active{
-      border-color:var(--green);
-      background:linear-gradient(135deg,rgba(15,93,69,0.05),rgba(22,162,112,0.05));
-      box-shadow:0 8px 16px rgba(15,93,69,0.1);
-    }
-    .pillar-title{
-      font-weight:600;
-      color:var(--green);
-      margin-bottom:0.5rem;
-      font-size:1rem;
-    }
-    .pillar-desc{
-      font-size:0.9rem;
-      color:var(--text-muted);
-      display:none;
-    }
-    .pillar-card.active .pillar-desc{
-      display:block;
-      animation:fadeIn 0.3s ease;
-    }
-    @keyframes fadeIn{
-      from{opacity:0;transform:translateY(-10px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-    
-    /* Focus areas with hover effect */
-    .focus-section{
-      margin:3rem 0;
-      padding:3rem 0;
-    }
+    .pillar-card:hover{border-color:var(--green); transform:translateY(-4px); box-shadow:0 12px 24px rgba(15,93,69,0.15);}
+    .pillar-card.active{border-color:var(--green); background:linear-gradient(135deg,rgba(15,93,69,0.05),rgba(22,162,112,0.05)); box-shadow:0 8px 16px rgba(15,93,69,0.1);}
+    .pillar-title{font-weight:600; color:var(--green); margin-bottom:0.5rem; font-size:1rem;}
+    .pillar-desc{font-size:0.9rem; color:var(--text-muted); display:none;}
+    .pillar-card.active .pillar-desc{display:block; animation:fadeIn 0.3s ease;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+
+    /* Focus areas */
+    .focus-section{margin:3rem 0; padding:3rem 0;}
     .section-label{
-      font-size:0.85rem;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      color:var(--text-muted);
-      margin-bottom:2rem;
-      font-weight:600;
-      text-align:center;
-      position:relative;
-      padding-bottom:1rem;
+      font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; color:var(--text-muted); margin-bottom:2rem;
+      font-weight:600; text-align:center; position:relative; padding-bottom:1rem;
     }
     .section-label::after{
-      content:'';
-      position:absolute;
-      bottom:0;
-      left:50%;
-      transform:translateX(-50%);
-      width:40px;
-      height:2px;
-      background:linear-gradient(90deg, var(--green), var(--green-light));
-      border-radius:2px;
+      content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+      width:40px; height:2px; background:linear-gradient(90deg, var(--green), var(--green-light)); border-radius:2px;
     }
-    .focus-grid{
-      display:flex;
-      flex-wrap:wrap;
-      gap:1.5rem;
-      justify-content:center;
-      align-items:center;
-      min-height:300px;
-    }
+    .focus-grid{display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; align-items:center; min-height:300px;}
     .focus-tag{
-      padding:0.8rem 1.5rem;
-      border:2px solid #e5e5e5;
-      border-radius:999px;
-      font-size:0.95rem;
-      background:white;
-      color:var(--text);
-      cursor:pointer;
-      transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      font-weight:500;
-      box-shadow:0 2px 8px rgba(0,0,0,0.05);
-      position:relative;
-      display:inline-block;
+      padding:0.8rem 1.5rem; border:2px solid #e5e5e5; border-radius:999px; font-size:0.95rem; background:white; color:var(--text);
+      cursor:pointer; transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-weight:500; box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      position:relative; display:inline-block;
     }
-    .focus-icon{
-      position:absolute;
-      font-size:1.2rem;
-      opacity:0.3;
-      pointer-events:none;
-    }
-    .focus-tag:hover .focus-icon{
-      opacity:0.6;
-    }
-    .icon-1{
-      top:-10px;
-      right:-10px;
-      animation:orbit1 8s linear infinite;
-    }
-    .icon-2{
-      bottom:-10px;
-      left:-10px;
-      animation:orbit2 10s linear infinite;
-    }
-    @keyframes orbit1{
-      0%{transform:rotate(0deg) translateX(20px) rotate(0deg)}
-      100%{transform:rotate(360deg) translateX(20px) rotate(-360deg)}
-    }
-    @keyframes orbit2{
-      0%{transform:rotate(180deg) translateX(20px) rotate(-180deg)}
-      100%{transform:rotate(540deg) translateX(20px) rotate(-540deg)}
-    }
-    .focus-title{
-      font-weight:500;
-    }
-    .focus-tag.active{
-      transform:rotate(0deg) scale(1.05);
-      border-color:var(--green);
-      background:linear-gradient(135deg,rgba(15,93,69,0.05),rgba(22,162,112,0.05));
-      padding:0.8rem 1.5rem 3rem;
-    }
-    .focus-desc{
-      display:none;
-      font-size:0.85rem;
-      color:var(--text-muted);
-      margin-top:0.5rem;
-      font-weight:400;
-      line-height:1.4;
-      max-width:280px;
-    }
-    .focus-tag.active .focus-desc{
-      display:block;
-      animation:fadeIn 0.3s ease;
-    }
-    .focus-tag:nth-child(1){transform:rotate(-3deg)}
-    .focus-tag:nth-child(2){transform:rotate(2deg)}
-    .focus-tag:nth-child(3){transform:rotate(-1deg)}
-    .focus-tag:nth-child(4){transform:rotate(4deg)}
-    .focus-tag:nth-child(5){transform:rotate(-2deg)}
-    .focus-tag:nth-child(6){transform:rotate(1deg)}
-    .focus-tag:nth-child(7){transform:rotate(-4deg)}
-    .focus-tag:nth-child(8){transform:rotate(3deg)}
-    .focus-tag:nth-child(9){transform:rotate(-2deg)}
-    .focus-tag:nth-child(10){transform:rotate(2deg)}
-    .focus-tag:nth-child(11){transform:rotate(-3deg)}
-    .focus-tag:nth-child(12){transform:rotate(1deg)}
+    .focus-icon{position:absolute; font-size:1.2rem; opacity:0.3; pointer-events:none;}
+    .focus-tag:hover .focus-icon{opacity:0.6;}
+    .icon-1{top:-10px; right:-10px; animation:orbit1 8s linear infinite;}
+    .icon-2{bottom:-10px; left:-10px; animation:orbit2 10s linear infinite;}
+    @keyframes orbit1{0%{transform:rotate(0deg) translateX(20px) rotate(0deg)}100%{transform:rotate(360deg) translateX(20px) rotate(-360deg)}}
+    @keyframes orbit2{0%{transform:rotate(180deg) translateX(20px) rotate(-180deg)}100%{transform:rotate(540deg) translateX(20px) rotate(-540deg)}}
+    .focus-title{font-weight:500;}
+    .focus-tag.active{transform:rotate(0deg) scale(1.05); border-color:var(--green);
+      background:linear-gradient(135deg,rgba(15,93,69,0.05),rgba(22,162,112,0.05)); padding:0.8rem 1.5rem 3rem;}
+    .focus-desc{display:none; font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem; font-weight:400; line-height:1.4; max-width:280px;}
+    .focus-tag.active .focus-desc{display:block; animation:fadeIn 0.3s ease;}
+    .focus-tag:nth-child(1){transform:rotate(-3deg)} .focus-tag:nth-child(2){transform:rotate(2deg)}
+    .focus-tag:nth-child(3){transform:rotate(-1deg)} .focus-tag:nth-child(4){transform:rotate(4deg)}
+    .focus-tag:nth-child(5){transform:rotate(-2deg)} .focus-tag:nth-child(6){transform:rotate(1deg)}
+    .focus-tag:nth-child(7){transform:rotate(-4deg)} .focus-tag:nth-child(8){transform:rotate(3deg)}
+    .focus-tag:nth-child(9){transform:rotate(-2deg)} .focus-tag:nth-child(10){transform:rotate(2deg)}
+    .focus-tag:nth-child(11){transform:rotate(-3deg)} .focus-tag:nth-child(12){transform:rotate(1deg)}
     .focus-tag:hover{
-      transform:rotate(0deg) translateY(-8px) scale(1.1);
-      border-color:var(--green);
-      background:var(--green);
-      color:white;
-      box-shadow:0 12px 24px rgba(15,93,69,0.2);
-      z-index:10;
+      transform:rotate(0deg) translateY(-8px) scale(1.1); border-color:var(--green); background:var(--green); color:white;
+      box-shadow:0 12px 24px rgba(15,93,69,0.2); z-index:10;
     }
-    .focus-tag.active:hover{
-      background:linear-gradient(135deg,rgba(15,93,69,0.08),rgba(22,162,112,0.08));
-      color:var(--text);
-    }
-    
+    .focus-tag.active:hover{background:linear-gradient(135deg,rgba(15,93,69,0.08),rgba(22,162,112,0.08)); color:var(--text);}
+
     /* Contact form */
     .contact-section{
-      margin:3rem 0;
-      padding:2.5rem;
-      background:linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
-      border:2px solid #e5e5e5;
-      border-radius:12px;
-      box-shadow:0 4px 20px rgba(0,0,0,0.08);
-      backdrop-filter:blur(10px);
+      margin:3rem 0; padding:2.5rem; background:linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+      border:2px solid #e5e5e5; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08); backdrop-filter:blur(10px);
     }
-    .form-group{
-      margin-bottom:1.5rem;
-    }
-    label{
-      display:block;
-      font-weight:600;
-      margin-bottom:0.5rem;
-      color:var(--text);
-      font-size:0.95rem;
-    }
+    .form-group{margin-bottom:1.5rem;}
+    label{display:block; font-weight:600; margin-bottom:0.5rem; color:var(--text); font-size:0.95rem;}
     input,textarea{
-      width:100%;
-      padding:0.75rem 1rem;
-      border:1px solid #e5e5e5;
-      border-radius:8px;
-      font-family:inherit;
-      font-size:1rem;
-      transition:all 0.2s ease;
-      background:white;
+      width:100%; padding:0.75rem 1rem; border:1px solid #e5e5e5; border-radius:8px; font-family:inherit; font-size:1rem;
+      transition:all 0.2s ease; background:white;
     }
-    input:focus,textarea:focus{
-      outline:none;
-      border-color:var(--green);
-      box-shadow:0 0 0 3px rgba(15,93,69,0.1);
-    }
-    textarea{
-      resize:vertical;
-      min-height:100px;
-    }
-    .btn{
-      padding:0.875rem 2rem;
-      background:var(--green);
-      color:white;
-      border:none;
-      border-radius:8px;
-      font-weight:600;
-      font-size:1rem;
-      cursor:pointer;
-      transition:all 0.2s ease;
-    }
-    .btn:hover{
-      background:var(--green-light);
-      transform:translateY(-2px);
-    }
-    .btn:active{
-      transform:translateY(0);
-    }
-    
-    /* Success message */
+    input:focus,textarea:focus{outline:none; border-color:var(--green); box-shadow:0 0 0 3px rgba(15,93,69,0.1);}
+    textarea{resize:vertical; min-height:100px;}
+    .btn{padding:0.875rem 2rem; background:var(--green); color:white; border:none; border-radius:8px; font-weight:600; font-size:1rem; cursor:pointer; transition:all 0.2s ease;}
+    .btn:hover{background:var(--green-light); transform:translateY(-2px);}
+    .btn:active{transform:translateY(0);}
     .success-msg{
-      display:none;
-      padding:1rem;
-      background:linear-gradient(135deg, #d1fae5, #a7f3d0);
-      color:#065f46;
-      border-radius:8px;
-      margin-top:1rem;
-      animation:fadeIn 0.3s ease;
-      border-left:4px solid #10b981;
-      box-shadow:0 4px 12px rgba(16,185,129,0.2);
+      display:none; padding:1rem; background:linear-gradient(135deg, #d1fae5, #a7f3d0); color:#065f46; border-radius:8px; margin-top:1rem;
+      animation:fadeIn 0.3s ease; border-left:4px solid #10b981; box-shadow:0 4px 12px rgba(16,185,129,0.2);
     }
-    .success-msg.show{
-      display:block;
-    }
-    
+    .success-msg.show{display:block;}
+
     /* Footer */
-    footer{
-      padding:2rem 5%;
-      border-top:1px solid #e5e5e5;
-      text-align:center;
-      color:var(--text-muted);
-      font-size:0.9rem;
-    }
-    
+    footer{padding:2rem 5%; border-top:1px solid #e5e5e5; text-align:center; color:var(--text-muted); font-size:0.9rem;}
+
     @media (max-width:768px){
-      main{
-        padding:1.5rem 5%;
-      }
-      .pillars{
-        grid-template-columns:1fr;
-      }
-      h1{
-        font-size:1.75rem;
-      }
-      .contact-section{
-        padding:1.5rem;
-      }
-      .focus-grid{
-        gap:1rem;
-        min-height:auto;
-      }
-      .focus-tag{
-        font-size:0.85rem;
-        padding:0.6rem 1.2rem;
-      }
-      .focus-tag.active{
-        padding:0.6rem 1.2rem 2.5rem;
-      }
-      .focus-desc{
-        font-size:0.8rem;
-        max-width:100%;
-      }
-      .focus-tag:nth-child(1),
-      .focus-tag:nth-child(2),
-      .focus-tag:nth-child(3),
-      .focus-tag:nth-child(4),
-      .focus-tag:nth-child(5),
-      .focus-tag:nth-child(6),
-      .focus-tag:nth-child(7),
-      .focus-tag:nth-child(8),
-      .focus-tag:nth-child(9),
-      .focus-tag:nth-child(10),
-      .focus-tag:nth-child(11),
-      .focus-tag:nth-child(12){
-        transform:rotate(0deg);
-      }
-      .site-subtitle{
-        font-size:0.85rem;
-      }
-      .nav-toggle{
-        margin-top:0.5rem;
-      }
+      main{padding:1.5rem 5%;}
+      .pillars{grid-template-columns:1fr;}
+      h1{font-size:1.75rem;}
+      .contact-section{padding:1.5rem;}
+      .focus-grid{gap:1rem; min-height:auto;}
+      .focus-tag{font-size:0.85rem; padding:0.6rem 1.2rem;}
+      .focus-tag.active{padding:0.6rem 1.2rem 2.5rem;}
+      .focus-desc{font-size:0.8rem; max-width:100%;}
+      .focus-tag:nth-child(n){transform:rotate(0deg);}
+      .site-subtitle{font-size:0.85rem;}
+      .nav-toggle{margin-top:0.5rem;}
     }
-    
-    @media (min-width:769px) and (max-width:1024px){
-      main{
-        padding:2rem 6%;
-      }
-    }
-    
-    @media (min-width:1400px){
-      main{
-        max-width:1400px;
-        padding:2.5rem 10%;
-      }
-    }
+    @media (min-width:769px) and (max-width:1024px){ main{padding:2rem 6%;} }
+    @media (min-width:1400px){ main{max-width:1400px; padding:2.5rem 10%;} }
   </style>
 </head>
 <body>
@@ -577,11 +257,7 @@
     </div>
     <nav>
       <div class="nav-toggle" onclick="this.classList.toggle('active'); document.getElementById('navMenu').classList.toggle('active')">
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <div class="hamburger"><span></span><span></span><span></span></div>
         <span>Menu</span>
       </div>
       <div class="nav-menu" id="navMenu">
@@ -595,13 +271,12 @@
 
   <main>
     <a href="#contact" class="badge">LAUNCHING SOON</a>
-    
+
     <h1 id="who-we-are">Reimagining Liberia's development with ideas, evidence, and action.</h1>
-    
     <p class="intro">
-      Liberia Policy Lab is a youth‑led, boutique policy lab and think tank that brings together young leaders, academics, policymakers, and citizens to co‑create data‑driven solutions to Liberia's development challenges.
+      Liberia Policy Lab is a youth-led, boutique policy lab and think tank that brings together young leaders, academics, policymakers, and citizens to co-create data-driven solutions to Liberia's development challenges.
     </p>
-    
+
     <div class="pillars" id="what-we-do">
       <div class="pillar-card" onclick="this.classList.toggle('active')">
         <div class="pillar-title">Research & Analysis</div>
@@ -616,89 +291,77 @@
         <div class="pillar-desc">Building bridges between citizens, leaders, and institutions for collaborative governance.</div>
       </div>
     </div>
-    
+
     <div class="focus-section" id="focus-areas">
       <div class="section-label">Focus Areas</div>
       <div class="focus-grid">
         <span class="focus-tag" onclick="this.classList.toggle('active')">
-          <span class="focus-icon icon-1">🌿</span>
-          <span class="focus-icon icon-2">♻️</span>
+          <span class="focus-icon icon-1">🌿</span><span class="focus-icon icon-2">♻️</span>
           <div class="focus-title">Climate & Environment</div>
           <div class="focus-desc">Developing sustainable policies to combat climate change and protect Liberia's natural resources.</div>
         </span>
         <span class="focus-tag" onclick="this.classList.toggle('active')">
-          <span class="focus-icon icon-1">📈</span>
-          <span class="focus-icon icon-2">💰</span>
+          <span class="focus-icon icon-1">📈</span><span class="focus-icon icon-2">💰</span>
           <div class="focus-title">Economic Development</div>
           <div class="focus-desc">Creating pathways for inclusive economic growth and poverty reduction across all sectors.</div>
         </span>
         <span class="focus-tag" onclick="this.classList.toggle('active')">
-          <span class="focus-icon icon-1">📚</span>
-          <span class="focus-icon icon-2">🎓</span>
+          <span class="focus-icon icon-1">📚</span><span class="focus-icon icon-2">🎓</span>
           <div class="focus-title">Education</div>
           <div class="focus-desc">Strengthening educational systems to equip Liberians with skills for the 21st century.</div>
         </span>
         <span class="focus-tag" onclick="this.classList.toggle('active')">
-          <span class="focus-icon icon-1">🏥</span>
-          <span class="focus-icon icon-2">💊</span>
+          <span class="focus-icon icon-1">🏥</span><span class="focus-icon icon-2">💊</span>
           <div class="focus-title">Health & Wellbeing</div>
           <div class="focus-desc">Improving healthcare access and quality to ensure healthier communities nationwide.</div>
         </span>
         <span class="focus-tag" onclick="this.classList.toggle('active')">
-          <span class="focus-icon icon-1">💼</span>
-          <span class="focus-icon icon-2">👷</span>
+          <span class="focus-icon icon-1">💼</span><span class="focus-icon icon-2">👷</span>
           <div class="focus-title">Employment</div>
           <div class="focus-desc">Addressing youth unemployment and creating sustainable job opportunities for all Liberians.</div>
         </span>
         <span class="focus-tag" onclick="this.classList.toggle('active')">
-          <span class="focus-icon icon-1">⚖️</span>
-          <span class="focus-icon icon-2">🏛️</span>
+          <span class="focus-icon icon-1">⚖️</span><span class="focus-icon icon-2">🏛️</span>
           <div class="focus-title">Governance</div>
           <div class="focus-desc">Promoting transparency, accountability, and citizen participation in democratic processes.</div>
         </span>
         <span class="focus-tag" onclick="this.classList.toggle('active')">
-          <span class="focus-icon icon-1">🤝</span>
-          <span class="focus-icon icon-2">🏢</span>
+          <span class="focus-icon icon-1">🤝</span><span class="focus-icon icon-2">🏢</span>
           <div class="focus-title">Public-Private Partnerships</div>
           <div class="focus-desc">Fostering collaboration between government and private sector for sustainable development.</div>
         </span>
         <span class="focus-tag" onclick="this.classList.toggle('active')">
-          <span class="focus-icon icon-1">🚀</span>
-          <span class="focus-icon icon-2">💡</span>
+          <span class="focus-icon icon-1">🚀</span><span class="focus-icon icon-2">💡</span>
           <div class="focus-title">Emerging Technology</div>
           <div class="focus-desc">Harnessing digital innovation to leapfrog development challenges and improve public services.</div>
         </span>
         <span class="focus-tag" onclick="this.classList.toggle('active')">
-          <span class="focus-icon icon-1">🤖</span>
-          <span class="focus-icon icon-2">🔒</span>
+          <span class="focus-icon icon-1">🤖</span><span class="focus-icon icon-2">🔒</span>
           <div class="focus-title">AI and Data Privacy</div>
           <div class="focus-desc">Developing frameworks to responsibly leverage AI while protecting citizens' digital rights.</div>
         </span>
         <span class="focus-tag" onclick="this.classList.toggle('active')">
-          <span class="focus-icon icon-1">⚡</span>
-          <span class="focus-icon icon-2">💡</span>
+          <span class="focus-icon icon-1">⚡</span><span class="focus-icon icon-2">💡</span>
           <div class="focus-title">Energy and Electricity</div>
           <div class="focus-desc">Expanding reliable and affordable power access to drive economic growth and quality of life.</div>
         </span>
         <span class="focus-tag" onclick="this.classList.toggle('active')">
-          <span class="focus-icon icon-1">🏗️</span>
-          <span class="focus-icon icon-2">🌉</span>
+          <span class="focus-icon icon-1">🏗️</span><span class="focus-icon icon-2">🌉</span>
           <div class="focus-title">Infrastructure</div>
           <div class="focus-desc">Building and modernizing roads, bridges, and facilities to connect communities and enable commerce.</div>
         </span>
         <span class="focus-tag" onclick="this.classList.toggle('active')">
-          <span class="focus-icon icon-1">🤲</span>
-          <span class="focus-icon icon-2">❤️</span>
+          <span class="focus-icon icon-1">🤲</span><span class="focus-icon icon-2">❤️</span>
           <div class="focus-title">Social Welfare</div>
           <div class="focus-desc">Ensuring social protection systems that support vulnerable populations and reduce inequality.</div>
         </span>
       </div>
     </div>
-    
+
     <div class="contact-section" id="contact">
       <h2 style="margin-bottom:1rem;font-size:1.5rem">Get Early Updates</h2>
       <p style="color:var(--text-muted);margin-bottom:1.5rem">Be the first to know when we launch and stay informed about our work.</p>
-      
+
       <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfht-kOH39PV2oWsz6RHSsEmCybf_WHhmPwg9pc-YvtGQMS4Q/formResponse" method="POST" target="hidden_iframe">
         <div class="form-group">
           <label for="name">Name</label>
@@ -717,7 +380,7 @@
           Thank you! We'll be in touch soon. For immediate inquiries, email us at info@liberiapolicylab.org
         </div>
       </form>
-      
+
       <!-- Hidden iframe to prevent redirect -->
       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </div>
@@ -730,7 +393,7 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    
+
     // Close dropdown when clicking outside
     document.addEventListener('click', function(e){
       const navMenu = document.getElementById('navMenu');
@@ -740,10 +403,9 @@
         navToggle.classList.remove('active');
       }
     });
-    
-    // Form submission to Google Forms
-    document.getElementById('contactForm').addEventListener('submit', function(e){
-      // Don't prevent default - let it submit to Google Forms via iframe
+
+    // Form submission UI feedback for Google Forms
+    document.getElementById('contactForm').addEventListener('submit', function(){
       document.getElementById('successMsg').classList.add('show');
       setTimeout(() => {
         this.reset();
