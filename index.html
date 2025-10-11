@@ -19,7 +19,7 @@
     *{box-sizing:border-box;margin:0;padding:0}
     html{
       scroll-behavior:smooth;
-      scroll-padding-top:100px;
+      scroll-padding-top:80px;
     }
     body{
       font-family:Inter,sans-serif;
@@ -55,21 +55,25 @@
       background:rgba(255,255,255,0.8);
       backdrop-filter:blur(10px);
       box-shadow:0 1px 3px rgba(0,0,0,0.05);
+      position:relative;
+      z-index:1000;
     }
     .header-top{
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
       margin-bottom:1rem;
+      flex-direction:column;
+      width:100%;
     }
     .header-left{
-      flex:1;
+      width:100%;
     }
     .site-title{
       font-size:1.5rem;
       font-weight:700;
       color:var(--green);
-      margin-bottom:0.25rem;
+      margin-bottom:0.5rem;
       background:linear-gradient(135deg, var(--green), var(--green-light));
       -webkit-background-clip:text;
       -webkit-text-fill-color:transparent;
@@ -78,45 +82,92 @@
     .site-subtitle{
       font-size:0.95rem;
       color:var(--text-muted);
-      max-width:800px;
       line-height:1.5;
+      width:100%;
     }
     nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:1.5rem;
-      flex-wrap:wrap;
-      width:100%;
-      padding:1rem 0;
-      border-top:1px solid #e5e5e5;
-    }
-    nav a{
-      text-decoration:none;
-      color:var(--text);
-      font-weight:500;
-      font-size:0.95rem;
-      padding:0.5rem 1rem;
       position:relative;
-      transition:color 0.2s ease;
-      flex:1;
-      text-align:center;
+      display:flex;
+      justify-content:flex-end;
     }
-    nav a::after{
-      content:'';
-      position:absolute;
-      bottom:0;
-      left:0;
-      width:0;
+    .nav-toggle{
+      display:flex;
+      align-items:center;
+      gap:0.5rem;
+      padding:0.75rem 1.25rem;
+      background:white;
+      border:2px solid #e5e5e5;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:500;
+      color:var(--text);
+      transition:all 0.3s ease;
+      margin-top:1rem;
+    }
+    .nav-toggle:hover{
+      border-color:var(--green);
+      background:rgba(15,93,69,0.05);
+    }
+    .hamburger{
+      display:flex;
+      flex-direction:column;
+      gap:3px;
+      width:20px;
+    }
+    .hamburger span{
+      width:100%;
       height:2px;
       background:var(--green);
-      transition:width 0.3s ease;
+      border-radius:2px;
+      transition:all 0.3s ease;
     }
-    nav a:hover{
+    .nav-toggle.active .hamburger span:nth-child(1){
+      transform:rotate(45deg) translateY(7px);
+    }
+    .nav-toggle.active .hamburger span:nth-child(2){
+      opacity:0;
+    }
+    .nav-toggle.active .hamburger span:nth-child(3){
+      transform:rotate(-45deg) translateY(-7px);
+    }
+    .nav-menu{
+      display:none;
+      position:absolute;
+      top:100%;
+      right:0;
+      margin-top:0.5rem;
+      background:white;
+      border:2px solid #e5e5e5;
+      border-radius:12px;
+      box-shadow:0 8px 24px rgba(0,0,0,0.15);
+      min-width:200px;
+      overflow:hidden;
+      z-index:1001;
+    }
+    .nav-menu.active{
+      display:block;
+      animation:slideDown 0.3s ease;
+    }
+    @keyframes slideDown{
+      from{opacity:0;transform:translateY(-10px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    .nav-menu a{
+      display:block;
+      padding:1rem 1.5rem;
+      color:var(--text);
+      text-decoration:none;
+      font-weight:500;
+      transition:all 0.2s ease;
+      border-bottom:1px solid #f0f0f0;
+    }
+    .nav-menu a:last-child{
+      border-bottom:none;
+    }
+    .nav-menu a:hover{
+      background:rgba(15,93,69,0.05);
       color:var(--green);
-    }
-    nav a:hover::after{
-      width:100%;
+      padding-left:2rem;
     }
     
     /* Main content */
@@ -124,7 +175,7 @@
       flex:1;
       max-width:1200px;
       margin:0 auto;
-      padding:4rem 8% 3rem;
+      padding:2rem 8% 3rem;
       width:100%;
     }
     main::before{
@@ -153,6 +204,16 @@
       overflow:hidden;
       box-shadow:0 4px 15px rgba(15,93,69,0.3);
       animation:pulse-glow 2s ease-in-out infinite;
+      cursor:pointer;
+      text-decoration:none;
+      transition:transform 0.2s ease;
+    }
+    .badge:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 20px rgba(15,93,69,0.4);
+    }
+    .badge:active{
+      transform:translateY(0);
     }
     @keyframes pulse-glow{
       0%, 100%{box-shadow:0 4px 15px rgba(15,93,69,0.3)}
@@ -444,7 +505,7 @@
     
     @media (max-width:768px){
       main{
-        padding:2rem 5%;
+        padding:1.5rem 5%;
       }
       .pillars{
         grid-template-columns:1fr;
@@ -487,28 +548,21 @@
       .site-subtitle{
         font-size:0.85rem;
       }
-      .focus-icon{
-        display:none;
-      }
-      nav{
-        gap:1rem;
-        margin-top:1rem;
-      }
-      nav a{
-        font-size:0.85rem;
+      .nav-toggle{
+        margin-top:0.5rem;
       }
     }
     
     @media (min-width:769px) and (max-width:1024px){
       main{
-        padding:3rem 6%;
+        padding:2rem 6%;
       }
     }
     
     @media (min-width:1400px){
       main{
         max-width:1400px;
-        padding:4rem 10%;
+        padding:2.5rem 10%;
       }
     }
   </style>
@@ -518,24 +572,34 @@
     <div class="header-top">
       <div class="header-left">
         <div class="site-title">Liberia Policy Lab</div>
-        <div class="site-subtitle">Transforming research into reform, turning data into decisions that advance equitable and sustainable development in Liberia.</div>
+        <div class="site-subtitle">We transform groundbreaking research findings into tools for reforms and use data to shape decisions and policy outcomes.</div>
       </div>
     </div>
     <nav>
-      <a href="#who-we-are">Who We Are</a>
-      <a href="#what-we-do">What We Do</a>
-      <a href="#focus-areas">Our Focus Areas</a>
-      <a href="#contact">Contact</a>
+      <div class="nav-toggle" onclick="this.classList.toggle('active'); document.getElementById('navMenu').classList.toggle('active')">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span>Menu</span>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <a href="#who-we-are" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">Who We Are</a>
+        <a href="#what-we-do" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">What We Do</a>
+        <a href="#focus-areas" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">Our Focus Areas</a>
+        <a href="#contact" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">Contact</a>
+      </div>
     </nav>
   </header>
 
   <main>
-    <div class="badge">LAUNCHING SOON</div>
+    <a href="#contact" class="badge">LAUNCHING SOON</a>
     
     <h1 id="who-we-are">Reimagining Liberia's development with ideas, evidence, and action.</h1>
     
     <p class="intro">
-      Liberia Policy Lab is a youth‑led, boutique policy lab and think tank that brings together young leaders, academics, policymakers, and citizens to co‑create data‑driven solutions across climate & environment, the economy, education, health & wellbeing, employment, governance, and public–private collaboration.
+      Liberia Policy Lab is a youth‑led, boutique policy lab and think tank that brings together young leaders, academics, policymakers, and citizens to co‑create data‑driven solutions to Liberia's development challenges.
     </p>
     
     <div class="pillars" id="what-we-do">
@@ -666,6 +730,16 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e){
+      const navMenu = document.getElementById('navMenu');
+      const navToggle = document.querySelector('.nav-toggle');
+      if(navMenu && navToggle && !navToggle.contains(e.target) && !navMenu.contains(e.target)){
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+      }
+    });
     
     // Form submission to Google Forms
     document.getElementById('contactForm').addEventListener('submit', function(e){
