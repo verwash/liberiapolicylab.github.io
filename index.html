@@ -186,6 +186,7 @@
     .focus-tag:nth-child(9){transform:rotate(-2deg)} .focus-tag:nth-child(10){transform:rotate(2deg)}
     .focus-tag:nth-child(11){transform:rotate(-3deg)} .focus-tag:nth-child(12){transform:rotate(1deg)}
     .focus-tag:nth-child(13){transform:rotate(-1deg)} .focus-tag:nth-child(14){transform:rotate(2deg)}
+    .focus-tag:nth-child(15){transform:rotate(-3deg)}
     .focus-tag:hover{
       transform:rotate(0deg) translateY(-8px) scale(1.1); border-color:var(--green); background:var(--green); color:white;
       box-shadow:0 12px 24px rgba(15,93,69,0.2); z-index:10;
@@ -398,6 +399,11 @@
           <span class="focus-icon icon-1">🗺️</span><span class="focus-icon icon-2">✈️</span>
           <div class="focus-title">Tourism</div>
           <div class="focus-desc">Developing sustainable tourism to showcase Liberia's culture, heritage, and natural beauty.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">🛡️</span><span class="focus-icon icon-2">🌍</span>
+          <div class="focus-title">Security & Foreign Policy</div>
+          <div class="focus-desc">Strengthening national security and advancing Liberia's interests through strategic international partnerships.</div>
         </span>
       </div>
     </div>
