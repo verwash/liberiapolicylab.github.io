@@ -38,7 +38,7 @@
   "name": "Liberia Policy Lab",
   "url": "https://www.liberiapolicylab.org/",
   "logo": "https://www.liberiapolicylab.org/favicon.png",
-  "description": "Liberia Policy Lab is a youth-led policy lab using research, innovation, and civic engagement to shape Liberia's sustainable development.",
+  "description": "Liberia Policy Lab is a youth-led policy lab using research, innovation, and civic engagement to shape Liberia’s sustainable development.",
   "foundingDate": "2025",
   "address": { "@type": "PostalAddress", "addressCountry": "LR" },
   "sameAs": [
@@ -445,6 +445,63 @@
         document.getElementById('successMsg').classList.remove('show');
       }, 5000);
     });
+  </script>
+
+  <!-- Added: Pretty-URL routing (no changes to existing code above) -->
+  <script>
+    (function () {
+      // Map pretty paths to section IDs
+      const routes = {
+        "/who-we-are": "who-we-are",
+        "/what-we-do": "what-we-do",
+        "/focus-areas": "focus-areas",
+        "/contact": "contact"
+      };
+
+      const idToPath = {
+        "who-we-are": "/who-we-are",
+        "what-we-do": "/what-we-do",
+        "focus-areas": "/focus-areas",
+        "contact": "/contact"
+      };
+
+      function scrollToId(id) {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      // 1) On load: if user lands on /contact etc., scroll to the right section (keep pretty URL)
+      document.addEventListener("DOMContentLoaded", function () {
+        const path = location.pathname.replace(/\/+$/, ""); // trim trailing slashes
+        if (routes[path]) {
+          scrollToId(routes[path]);
+        }
+      });
+
+      // 2) Intercept clicks on in-page hash links and switch to pretty path
+      document.addEventListener("click", function (e) {
+        const a = e.target.closest("a[href^='#']");
+        if (!a) return;
+
+        const hash = a.getAttribute("href").replace("#", "");
+        if (idToPath[hash]) {
+          e.preventDefault();
+          const pretty = idToPath[hash];
+          history.pushState({ pretty }, "", pretty);
+          scrollToId(hash);
+        }
+      });
+
+      // 3) Handle back/forward buttons
+      window.addEventListener("popstate", function () {
+        const path = location.pathname.replace(/\/+$/, "");
+        if (routes[path]) {
+          scrollToId(routes[path]);
+        }
+      });
+    })();
   </script>
 </body>
 </html>
