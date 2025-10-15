@@ -130,3 +130,338 @@
     @keyframes pulse-glow{0%,100%{box-shadow:0 4px 15px rgba(15,93,69,0.3)}50%{box-shadow:0 4px 25px rgba(15,93,69,0.5)}}
     .badge::after{content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
       background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent); animation:shimmer 3s infinite;}
+    @keyframes shimmer{to{left:100%}}
+
+    h1{
+      font-size:clamp(2rem,5vw,3rem); font-weight:700; line-height:1.2; margin-bottom:1.5rem; color:var(--text);
+      background:linear-gradient(135deg, #1a1a1a 0%, #0f5d45 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .intro{font-size:1.15rem; color:var(--text-muted); margin-bottom:2rem; opacity:0; animation:fadeInUp 0.6s ease-out 0.2s forwards;}
+
+    /* Pillars */
+    .pillars{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; margin:3rem 0; opacity:0; animation:fadeInUp 0.6s ease-out 0.4s forwards;}
+    .pillar-card{
+      padding:1.5rem; border:2px solid #e5e5e5; border-radius:12px; background:white; cursor:pointer; transition:all 0.3s ease;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    }
+    .pillar-card:hover{border-color:var(--green); transform:translateY(-4px); box-shadow:0 12px 24px rgba(15,93,69,0.15);}
+    .pillar-card.active{border-color:var(--green); background:linear-gradient(135deg,rgba(15,93,69,0.05),rgba(22,162,112,0.05)); box-shadow:0 8px 16px rgba(15,93,69,0.1);}
+    .pillar-title{font-weight:600; color:var(--green); margin-bottom:0.5rem; font-size:1rem;}
+    .pillar-desc{font-size:0.9rem; color:var(--text-muted); display:none;}
+    .pillar-card.active .pillar-desc{display:block; animation:fadeIn 0.3s ease;}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+    /* Focus areas */
+    .focus-section{margin:3rem 0; padding:3rem 0; opacity:0; animation:fadeInUp 0.6s ease-out 0.6s forwards;}
+    .section-label{
+      font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; color:var(--text-muted); margin-bottom:2rem;
+      font-weight:600; text-align:center; position:relative; padding-bottom:1rem;
+    }
+    .section-label::after{
+      content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+      width:40px; height:2px; background:linear-gradient(90deg, var(--green), var(--green-light)); border-radius:2px;
+    }
+    .focus-grid{display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:center; align-items:center; min-height:300px;}
+    .focus-tag{
+      padding:0.8rem 1.5rem; border:2px solid #e5e5e5; border-radius:999px; font-size:0.95rem; background:white; color:var(--text);
+      cursor:pointer; transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1); font-weight:500; box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      position:relative; display:inline-block;
+    }
+    .focus-icon{position:absolute; font-size:1.2rem; opacity:0.3; pointer-events:none;}
+    .focus-tag:hover .focus-icon{opacity:0.6;}
+    .icon-1{top:-10px; right:-10px; animation:orbit1 8s linear infinite;}
+    .icon-2{bottom:-10px; left:-10px; animation:orbit2 10s linear infinite;}
+    @keyframes orbit1{0%{transform:rotate(0deg) translateX(20px) rotate(0deg)}100%{transform:rotate(360deg) translateX(20px) rotate(-360deg)}}
+    @keyframes orbit2{0%{transform:rotate(180deg) translateX(20px) rotate(-180deg)}100%{transform:rotate(540deg) translateX(20px) rotate(-540deg)}}
+    .focus-title{font-weight:500;}
+    .focus-tag.active{transform:rotate(0deg) scale(1.05); border-color:var(--green);
+      background:linear-gradient(135deg,rgba(15,93,69,0.05),rgba(22,162,112,0.05)); padding:0.8rem 1.5rem 3rem;}
+    .focus-desc{display:none; font-size:0.85rem; color:var(--text-muted); margin-top:0.5rem; font-weight:400; line-height:1.4; max-width:280px;}
+    .focus-tag.active .focus-desc{display:block; animation:fadeIn 0.3s ease;}
+    .focus-tag:nth-child(1){transform:rotate(-3deg)} .focus-tag:nth-child(2){transform:rotate(2deg)}
+    .focus-tag:nth-child(3){transform:rotate(-1deg)} .focus-tag:nth-child(4){transform:rotate(4deg)}
+    .focus-tag:nth-child(5){transform:rotate(-2deg)} .focus-tag:nth-child(6){transform:rotate(1deg)}
+    .focus-tag:nth-child(7){transform:rotate(-4deg)} .focus-tag:nth-child(8){transform:rotate(3deg)}
+    .focus-tag:nth-child(9){transform:rotate(-2deg)} .focus-tag:nth-child(10){transform:rotate(2deg)}
+    .focus-tag:nth-child(11){transform:rotate(-3deg)} .focus-tag:nth-child(12){transform:rotate(1deg)}
+    .focus-tag:nth-child(13){transform:rotate(-1deg)} .focus-tag:nth-child(14){transform:rotate(2deg)}
+    .focus-tag:nth-child(15){transform:rotate(-3deg)}
+    .focus-tag:hover{
+      transform:rotate(0deg) translateY(-8px) scale(1.1); border-color:var(--green); background:var(--green); color:white;
+      box-shadow:0 12px 24px rgba(15,93,69,0.2); z-index:10;
+    }
+    .focus-tag.active:hover{background:linear-gradient(135deg,rgba(15,93,69,0.08),rgba(22,162,112,0.08)); color:var(--text);}
+
+    /* Contact form */
+    .contact-section{
+      margin:2rem 0; padding:1.5rem; background:linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+      border:2px solid #e5e5e5; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.08); backdrop-filter:blur(10px);
+      opacity:0; animation:fadeInUp 0.6s ease-out 0.8s forwards;
+    }
+    .form-group{margin-bottom:1rem;}
+    label{display:block; font-weight:600; margin-bottom:0.35rem; color:var(--text); font-size:0.9rem;}
+    input,textarea{
+      width:100%; padding:0.5rem 0.75rem; border:1px solid #e5e5e5; border-radius:8px; font-family:inherit; font-size:0.95rem;
+      transition:all 0.2s ease; background:white;
+    }
+    input:focus,textarea:focus{outline:none; border-color:var(--green); box-shadow:0 0 0 3px rgba(15,93,69,0.1);}
+    textarea{resize:vertical; min-height:70px;}
+    .btn{
+      padding:0.75rem 1.5rem; border-radius:12px; font-weight:600; font-size:0.95rem; text-decoration:none; display:inline-flex;
+      align-items:center; gap:0.75rem; transition:all 0.3s ease; position:relative; overflow:hidden;
+      background:linear-gradient(135deg, var(--green), var(--green-light)); color:white; border:none; cursor:pointer;
+      box-shadow:0 4px 15px rgba(15,93,69,0.3);
+    }
+    .btn::before{
+      content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition:left 0.5s ease;
+    }
+    .btn:hover::before{left:100%;}
+    .btn:hover{transform:translateY(-2px); box-shadow:0 6px 20px rgba(15,93,69,0.4);}
+    .btn:active{transform:translateY(0);}
+    .success-msg{
+      display:none; padding:1rem; background:linear-gradient(135deg, #d1fae5, #a7f3d0); color:#065f46; border-radius:8px; margin-top:1rem;
+      animation:fadeIn 0.3s ease; border-left:4px solid #10b981; box-shadow:0 4px 12px rgba(16,185,129,0.2);
+    }
+    .success-msg.show{display:block;}
+
+    /* Footer */
+    footer{
+      padding:2rem 5%; text-align:center; color:var(--text-muted); font-size:0.9rem;
+      background:rgba(255,255,255,0.8); backdrop-filter:blur(10px); border-top:1px solid #e5e5e5;
+      box-shadow:0 -1px 3px rgba(0,0,0,0.05);
+    }
+    .footnote{
+      font-size:0.95rem;
+      color:white;
+      font-weight:500;
+      margin-bottom:1.5rem;
+      padding:1.25rem 2rem;
+      background:linear-gradient(135deg, var(--green), var(--green-light));
+      border-radius:12px;
+      max-width:800px;
+      margin-left:auto;
+      margin-right:auto;
+      box-shadow:0 4px 15px rgba(15,93,69,0.3);
+      position:relative;
+      overflow:hidden;
+    }
+    .footnote::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation:shimmer 3s infinite;
+    }
+    footer a{
+      color:var(--green); text-decoration:none; transition:all 0.2s ease; position:relative;
+    }
+    footer a::after{
+      content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px;
+      background:var(--green); transition:width 0.3s ease;
+    }
+    footer a:hover::after{width:100%;}
+
+    @media (max-width:768px){
+      main{padding:1.5rem 5%;}
+      .pillars{grid-template-columns:1fr;}
+      h1{font-size:1.75rem;}
+      .contact-section{padding:1rem;}
+      .focus-grid{gap:1rem; min-height:auto;}
+      .focus-tag{font-size:0.85rem; padding:0.6rem 1.2rem;}
+      .focus-tag.active{padding:0.6rem 1.2rem 2.5rem;}
+      .focus-desc{font-size:0.8rem; max-width:100%;}
+      .focus-tag:nth-child(n){transform:rotate(0deg);}
+      .footnote{font-size:0.85rem; padding:1rem 1.5rem;}
+      header{padding:1rem 5%;}
+      .site-title{font-size:1.25rem;}
+      .nav-toggle{padding:0.5rem 1rem; font-size:0.9rem;}
+    }
+    @media (min-width:769px) and (max-width:1024px){ main{padding:2rem 6%;} }
+    @media (min-width:1400px){ main{max-width:1400px; padding:2.5rem 10%;} }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="site-title">Liberia Policy Lab</div>
+      <nav>
+        <div class="nav-toggle" onclick="this.classList.toggle('active'); document.getElementById('navMenu').classList.toggle('active')">
+          <div class="hamburger"><span></span><span></span><span></span></div>
+          <span>Menu</span>
+        </div>
+        <div class="nav-menu" id="navMenu">
+          <a href="/who-we-are" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">Who We Are</a>
+          <a href="/what-we-do" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">What We Do</a>
+          <a href="/focus-areas" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">Our Focus Areas</a>
+          <a href="/contact" onclick="document.getElementById('navMenu').classList.remove('active'); document.querySelector('.nav-toggle').classList.remove('active')">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <a href="/contact" class="badge">LAUNCHING SOON</a>
+
+    <h1 id="who-we-are">Reimagining Liberia's development with ideas, evidence, and action.</h1>
+    <p class="intro">
+      Liberia Policy Lab is a youth-led, boutique policy lab and think tank that brings together young leaders, academics, policymakers, and citizens to co-create data-driven solutions to Liberia's development challenges.
+    </p>
+
+    <div class="pillars" id="what-we-do">
+      <div class="pillar-card" onclick="this.classList.toggle('active')">
+        <div class="pillar-title">Research & Analysis</div>
+        <div class="pillar-desc">Rigorous, evidence-based research to inform policy decisions and drive meaningful change.</div>
+      </div>
+      <div class="pillar-card" onclick="this.classList.toggle('active')">
+        <div class="pillar-title">Policy Innovation</div>
+        <div class="pillar-desc">Creative policy design that addresses Liberia's unique challenges with innovative solutions.</div>
+      </div>
+      <div class="pillar-card" onclick="this.classList.toggle('active')">
+        <div class="pillar-title">Civic Engagement</div>
+        <div class="pillar-desc">Building bridges between citizens, leaders, and institutions for collaborative governance.</div>
+      </div>
+    </div>
+
+    <div class="focus-section" id="focus-areas">
+      <div class="section-label">Focus Areas</div>
+      <div class="focus-grid">
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">🌿</span><span class="focus-icon icon-2">♻️</span>
+          <div class="focus-title">Climate & Environment</div>
+          <div class="focus-desc">Developing sustainable policies to combat climate change and protect Liberia's natural resources.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">📈</span><span class="focus-icon icon-2">💰</span>
+          <div class="focus-title">Economic Development</div>
+          <div class="focus-desc">Creating pathways for inclusive economic growth and poverty reduction across all sectors.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">📚</span><span class="focus-icon icon-2">🎓</span>
+          <div class="focus-title">Education</div>
+          <div class="focus-desc">Strengthening educational systems to equip Liberians with skills for the 21st century.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">🏥</span><span class="focus-icon icon-2">💊</span>
+          <div class="focus-title">Health & Wellbeing</div>
+          <div class="focus-desc">Improving healthcare access and quality to ensure healthier communities nationwide.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">💼</span><span class="focus-icon icon-2">👷</span>
+          <div class="focus-title">Employment</div>
+          <div class="focus-desc">Addressing youth unemployment and creating sustainable job opportunities for all Liberians.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">⚖️</span><span class="focus-icon icon-2">🏛️</span>
+          <div class="focus-title">Governance</div>
+          <div class="focus-desc">Promoting transparency, accountability, and citizen participation in democratic processes.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">🤝</span><span class="focus-icon icon-2">🏢</span>
+          <div class="focus-title">Public-Private Partnerships</div>
+          <div class="focus-desc">Fostering collaboration between government and private sector for sustainable development.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">🚀</span><span class="focus-icon icon-2">💡</span>
+          <div class="focus-title">Emerging Technology</div>
+          <div class="focus-desc">Harnessing digital innovation to leapfrog development challenges and improve public services.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">🤖</span><span class="focus-icon icon-2">🔒</span>
+          <div class="focus-title">AI and Data Privacy</div>
+          <div class="focus-desc">Developing frameworks to responsibly leverage AI while protecting citizens' digital rights.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">⚡</span><span class="focus-icon icon-2">💡</span>
+          <div class="focus-title">Energy and Electricity</div>
+          <div class="focus-desc">Expanding reliable and affordable power access to drive economic growth and quality of life.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">🏗️</span><span class="focus-icon icon-2">🌉</span>
+          <div class="focus-title">Infrastructure</div>
+          <div class="focus-desc">Building and modernizing roads, bridges, and facilities to connect communities and enable commerce.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">🤲</span><span class="focus-icon icon-2">❤️</span>
+          <div class="focus-title">Social Welfare</div>
+          <div class="focus-desc">Ensuring social protection systems that support vulnerable populations and reduce inequality.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">🌾</span><span class="focus-icon icon-2">🚜</span>
+          <div class="focus-title">Agriculture</div>
+          <div class="focus-desc">Modernizing farming practices and supporting food security to strengthen rural livelihoods.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">🗺️</span><span class="focus-icon icon-2">✈️</span>
+          <div class="focus-title">Tourism</div>
+          <div class="focus-desc">Developing sustainable tourism to showcase Liberia's culture, heritage, and natural beauty.</div>
+        </span>
+        <span class="focus-tag" onclick="this.classList.toggle('active')">
+          <span class="focus-icon icon-1">🛡️</span><span class="focus-icon icon-2">🌍</span>
+          <div class="focus-title">Security & Foreign Policy</div>
+          <div class="focus-desc">Strengthening national security and advancing Liberia's interests through strategic international partnerships.</div>
+        </span>
+      </div>
+    </div>
+
+    <div class="contact-section" id="contact">
+      <h2 style="margin-bottom:0.5rem;font-size:1.2rem">Get Early Updates</h2>
+      <p style="color:var(--text-muted);margin-bottom:1rem;font-size:0.95rem">Be the first to know when we launch and stay informed about our work.</p>
+
+      <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfht-kOH39PV2oWsz6RHSsEmCybf_WHhmPwg9pc-YvtGQMS4Q/formResponse" method="POST" target="hidden_iframe">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="entry.482055907" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="entry.776778271" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="entry.2093165544"></textarea>
+        </div>
+        <button type="submit" class="btn">Join Our Community</button>
+        <div class="success-msg" id="successMsg">
+          Thank you! We'll be in touch soon. For immediate inquiries, email us at info@liberiapolicylab.org
+        </div>
+      </form>
+
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footnote">
+      We transform groundbreaking research findings into tools for reforms and use data to shape decisions and policy outcomes.
+    </div>
+    <p>© <span id="year"></span> Liberia Policy Lab · All rights reserved</p>
+    <p style="margin-top:0.5rem"><strong>Contact Us:</strong> <a href="mailto:info@liberiapolicylab.org">info@liberiapolicylab.org</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.addEventListener('click', function(e){
+      const navMenu = document.getElementById('navMenu');
+      const navToggle = document.querySelector('.nav-toggle');
+      if(navMenu && navToggle && !navToggle.contains(e.target) && !navMenu.contains(e.target)){
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+      }
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(){
+      document.getElementById('successMsg').classList.add('show');
+      setTimeout(() => {
+        this.reset();
+        document.getElementById('successMsg').classList.remove('show');
+      }, 5000);
+    });
+  </script>
+</body>
+</html>
