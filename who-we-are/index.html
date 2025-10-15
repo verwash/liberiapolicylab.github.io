@@ -2,11 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Who We Are – Liberia Policy Lab</title>
-  <link rel="canonical" href="https://www.liberiapolicylab.org/who-we-are" />
-  <meta name="robots" content="noindex,follow">
-  <meta http-equiv="refresh" content="0; url=/#who-we-are">
-  <script>location.replace('/#who-we-are');</script>
+  <meta name="description" content="Meet Liberia Policy Lab: a youth-led, boutique policy lab uniting researchers, policymakers, and citizens to co-create evidence-based solutions for Liberia.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.liberiapolicylab.org/who-we-are">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://www.liberiapolicylab.org/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.liberiapolicylab.org/who-we-are">
+  <meta property="og:title" content="Who We Are – Liberia Policy Lab">
+  <meta property="og:description" content="A youth-led policy lab reimagining Liberia’s development with ideas, evidence, and action.">
+  <meta property="og:image" content="https://www.liberiapolicylab.org/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.liberiapolicylab.org/who-we-are">
+  <meta name="twitter:title" content="Who We Are – Liberia Policy Lab">
+  <meta name="twitter:description" content="Meet the mission, people, and approach behind Liberia Policy Lab.">
+  <meta name="twitter:image" content="https://www.liberiapolicylab.org/og-image.png">
+
+  <!-- Fonts & CSS (shared across pages) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+
+  <!-- Structured Data: WebPage + Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.liberiapolicylab.org/#org",
+        "name": "Liberia Policy Lab",
+        "url": "https://www.liberiapolicylab.org/",
+        "logo": "https://www.liberiapolicylab.org/favicon.png",
+        "description": "Liberia Policy Lab is a youth-led policy lab using research, innovation, and civic engagement to shape Liberia's sustainable development.",
+        "foundingDate": "2025",
+        "address": { "@type": "PostalAddress", "addressCountry": "LR" },
+        "sameAs": [
+          "https://www.linkedin.com/company/liberiapolicylab",
+          "https://x.com/liberiapolicylab"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.liberiapolicylab.org/who-we-are#webpage",
+        "url": "https://www.liberiapolicylab.org/who-we-are",
+        "name": "Who We Are – Liberia Policy Lab",
+        "isPartOf": { "@id": "https://www.liberiapolicylab.org/#org" },
+        "primaryImageOfPage": "https://www.liberiapolicylab.org/og-image.png",
+        "description": "Meet Liberia Policy Lab: a youth-led policy lab uniting researchers, policymakers, and citizens to co-create evidence-based solutions for Liberia."
+      }
+    ]
+  }
+  </script>
 </head>
-<body></body>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-top">
+      <a class="site-title" href="/">Liberia Policy Lab</a>
+      <nav class="site-nav">
+        <a href="/who-we-are">Who We Are</a>
+        <a href="/what-we-do">What We Do</a>
+        <a href="/focus-areas">Our Focus Areas</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <span class="badge">ABOUT US</span>
+    <h1>Who We Are</h1>
+    <p class="intro">
+      Liberia Policy Lab is a youth-led, boutique policy lab and think tank that brings together young leaders,
+      academics, policymakers, and citizens to co-create data-driven solutions to Liberia’s development challenges.
+    </p>
+
+    <section class="pillars-grid">
+      <article class="pillar-card">
+        <h2>Mission</h2>
+        <p>Reimagine Liberia’s development through ideas, evidence, and action—transforming research into policy tools that drive sustainable reforms.</p>
+      </article>
+      <article class="pillar-card">
+        <h2>Approach</h2>
+        <p>We blend rigorous research, policy innovation, and civic engagement to deliver practical, scalable solutions for public impact.</p>
+      </article>
+      <article class="pillar-card">
+        <h2>Values</h2>
+        <p>Integrity, inclusivity, and evidence-based decision-making—centered on Liberia’s people and future generations.</p>
+      </article>
+    </section>
+
+    <section class="cta">
+      <a class="btn" href="/contact">Partner with us</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footnote">
+      We transform groundbreaking research findings into tools for reforms and use data to shape decisions and policy outcomes.
+    </div>
+    <p>© <span id="year"></span> Liberia Policy Lab · All rights reserved</p>
+    <p><strong>Contact:</strong> <a href="mailto:info@liberiapolicylab.org">info@liberiapolicylab.org</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
