@@ -1,22 +1,139 @@
 <!doctype html>
 <html lang="en">
 <head>
-<title>Who We Are – Liberia Policy Lab</title>
-<meta name="description" content="Meet Liberia Policy Lab: a youth-led, boutique policy lab uniting researchers, policymakers, and citizens to co-create evidence-based solutions for Liberia.">
-<link rel="canonical" href="https://www.liberiapolicylab.org/who-we-are">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.liberiapolicylab.org/who-we-are">
-<meta property="og:title" content="Who We Are – Liberia Policy Lab">
-<meta property="og:description" content="A youth-led policy lab reimagining Liberia’s development with ideas, evidence, and action.">
-<meta property="og:image" content="https://www.liberiapolicylab.org/og-image.png">
+  <title>Contact – Liberia Policy Lab</title>
+  <meta name="description" content="Get in touch with Liberia Policy Lab. Join our community, partner with us, or request information.">
+  <meta name="robots" content="index, follow">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://www.liberiapolicylab.org/who-we-are">
-<meta name="twitter:title" content="Who We Are – Liberia Policy Lab">
-<meta name="twitter:description" content="Meet the mission, people, and approach behind Liberia Policy Lab.">
-<meta name="robots" content="index, follow">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.liberiapolicylab.org/contact">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://www.liberiapolicylab.org/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.liberiapolicylab.org/contact">
+  <meta property="og:title" content="Contact – Liberia Policy Lab">
+  <meta property="og:description" content="Reach the Liberia Policy Lab team for partnerships, media, or general inquiries.">
+  <meta property="og:image" content="https://www.liberiapolicylab.org/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.liberiapolicylab.org/contact">
+  <meta name="twitter:title" content="Contact – Liberia Policy Lab">
+  <meta name="twitter:description" content="Send a message or join our mailing list.">
+  <meta name="twitter:image" content="https://www.liberiapolicylab.org/og-image.png">
+
+  <!-- Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://www.liberiapolicylab.org/#org",
+        "name":"Liberia Policy Lab",
+        "url":"https://www.liberiapolicylab.org/",
+        "logo":"https://www.liberiapolicylab.org/favicon.png",
+        "description":"Liberia Policy Lab is a youth-led policy lab using research, innovation, and civic engagement to shape Liberia's sustainable development.",
+        "foundingDate":"2025",
+        "address":{"@type":"PostalAddress","addressCountry":"LR"},
+        "sameAs":[
+          "https://www.linkedin.com/company/liberiapolicylab",
+          "https://x.com/liberiapolicylab"
+        ]
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://www.liberiapolicylab.org/contact#webpage",
+        "url":"https://www.liberiapolicylab.org/contact",
+        "name":"Contact – Liberia Policy Lab",
+        "isPartOf":{"@id":"https://www.liberiapolicylab.org/#org"},
+        "primaryImageOfPage":"https://www.liberiapolicylab.org/og-image.png",
+        "description":"Get in touch with Liberia Policy Lab. Join our community, partner with us, or request information."
+      }
+    ]
+  }
+  </script>
 </head>
-<body></body>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-top">
+      <a class="site-title" href="/">Liberia Policy Lab</a>
+      <nav class="site-nav">
+        <a href="/who-we-are">Who We Are</a>
+        <a href="/what-we-do">What We Do</a>
+        <a href="/focus-areas">Our Focus Areas</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <span class="badge">CONTACT</span>
+    <h1>Get in Touch</h1>
+    <p class="intro">Be the first to know when we launch, explore partnerships, or send us a message. We’d love to hear from you.</p>
+
+    <section class="contact-section">
+      <h2 style="margin-bottom:0.5rem;font-size:1.2rem">Contact Form</h2>
+      <p style="color:var(--text-muted);margin-bottom:1rem;font-size:0.95rem">Fill the form and we’ll get back to you shortly.</p>
+
+      <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfht-kOH39PV2oWsz6RHSsEmCybf_WHhmPwg9pc-YvtGQMS4Q/formResponse" method="POST" target="hidden_iframe">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="entry.482055907" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="entry.776778271" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message (optional)</label>
+          <textarea id="message" name="entry.2093165544"></textarea>
+        </div>
+        <button type="submit" class="btn">Send</button>
+        <div class="success-msg" id="successMsg">
+          Thank you! We'll be in touch soon. For immediate inquiries, email us at <a href="mailto:info@liberiapolicylab.org">info@liberiapolicylab.org</a>.
+        </div>
+      </form>
+
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    </section>
+
+    <section class="cta">
+      <a class="btn" href="mailto:info@liberiapolicylab.org">Email Us Directly</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footnote">
+      We transform groundbreaking research findings into tools for reforms and use data to shape decisions and policy outcomes.
+    </div>
+    <p>© <span id="year"></span> Liberia Policy Lab · All rights reserved</p>
+    <p><strong>Contact:</strong> <a href="mailto:info@liberiapolicylab.org">info@liberiapolicylab.org</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('contactForm').addEventListener('submit', function(){
+      document.getElementById('successMsg').classList.add('show');
+      setTimeout(() => {
+        this.reset();
+        document.getElementById('successMsg').classList.remove('show');
+      }, 5000);
+    });
+  </script>
+</body>
 </html>
