@@ -2,11 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>What We Do – Liberia Policy Lab</title>
-  <link rel="canonical" href="https://www.liberiapolicylab.org/what-we-do" />
-  <meta name="robots" content="index,follow">
-  <meta http-equiv="refresh" content="0; url=/#what-we-do">
-  <script>location.replace('/#what-we-do');</script>
+  <meta name="description" content="Research & analysis, policy innovation, and civic engagement—our pillars for data-driven change in Liberia.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.liberiapolicylab.org/what-we-do">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://www.liberiapolicylab.org/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.liberiapolicylab.org/what-we-do">
+  <meta property="og:title" content="What We Do – Liberia Policy Lab">
+  <meta property="og:description" content="See how we turn evidence into policy tools and public impact across Liberia.">
+  <meta property="og:image" content="https://www.liberiapolicylab.org/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.liberiapolicylab.org/what-we-do">
+  <meta name="twitter:title" content="What We Do – Liberia Policy Lab">
+  <meta name="twitter:description" content="Our programs and methods for impact.">
+  <meta name="twitter:image" content="https://www.liberiapolicylab.org/og-image.png">
+
+  <!-- Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://www.liberiapolicylab.org/#org",
+        "name":"Liberia Policy Lab",
+        "url":"https://www.liberiapolicylab.org/",
+        "logo":"https://www.liberiapolicylab.org/favicon.png",
+        "description":"Liberia Policy Lab is a youth-led policy lab using research, innovation, and civic engagement to shape Liberia's sustainable development.",
+        "foundingDate":"2025",
+        "address":{"@type":"PostalAddress","addressCountry":"LR"},
+        "sameAs":[
+          "https://www.linkedin.com/company/liberiapolicylab",
+          "https://x.com/liberiapolicylab"
+        ]
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://www.liberiapolicylab.org/what-we-do#webpage",
+        "url":"https://www.liberiapolicylab.org/what-we-do",
+        "name":"What We Do – Liberia Policy Lab",
+        "isPartOf":{"@id":"https://www.liberiapolicylab.org/#org"},
+        "primaryImageOfPage":"https://www.liberiapolicylab.org/og-image.png",
+        "description":"Research & analysis, policy innovation, and civic engagement—our pillars for data-driven change in Liberia."
+      }
+    ]
+  }
+  </script>
 </head>
-<body></body>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-top">
+      <a class="site-title" href="/">Liberia Policy Lab</a>
+      <nav class="site-nav">
+        <a href="/who-we-are">Who We Are</a>
+        <a href="/what-we-do">What We Do</a>
+        <a href="/focus-areas">Our Focus Areas</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <span class="badge">WHAT WE DO</span>
+    <h1>Turning Evidence into Public Impact</h1>
+    <p class="intro">We blend rigorous research, creative policy design, and civic engagement to deliver practical solutions for Liberia.</p>
+
+    <section class="pillars-grid">
+      <article class="pillar-card">
+        <h2>Research & Analysis</h2>
+        <p>We conduct independent, data-driven research to inform decisions. Our work includes policy briefs, datasets, and evaluations.</p>
+        <ul class="list">
+          <li>Quantitative & mixed-methods studies</li>
+          <li>Open data & reproducible analysis</li>
+          <li>Impact evaluations and monitoring</li>
+        </ul>
+      </article>
+
+      <article class="pillar-card">
+        <h2>Policy Innovation</h2>
+        <p>We co-design policies and tools with government, civil society, and communities—tailored to local realities.</p>
+        <ul class="list">
+          <li>Prototyping and policy pilots</li>
+          <li>Decision-support tools and dashboards</li>
+          <li>Implementation playbooks</li>
+        </ul>
+      </article>
+
+      <article class="pillar-card">
+        <h2>Civic Engagement</h2>
+        <p>We bridge citizens and institutions through dialogue, training, and accessible communication.</p>
+        <ul class="list">
+          <li>Community consultations & town halls</li>
+          <li>Training for youth & public servants</li>
+          <li>Public-facing explainers & podcasts</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cta">
+      <a class="btn" href="/contact">Propose a collaboration</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footnote">
+      We transform groundbreaking research findings into tools for reforms and use data to shape decisions and policy outcomes.
+    </div>
+    <p>© <span id="year"></span> Liberia Policy Lab · All rights reserved</p>
+    <p><strong>Contact:</strong> <a href="mailto:info@liberiapolicylab.org">info@liberiapolicylab.org</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
